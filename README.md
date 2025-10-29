@@ -1,2 +1,2 @@
 # escola-pinheiros
-Projeto para o Centro Educacional Pinheiros
+Projeto para o Centro Educacional Pinheiros!
