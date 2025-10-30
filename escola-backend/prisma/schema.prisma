@@ -1,0 +1,51 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Admin {
+  id       String @id @default(uuid())
+  email    String @unique
+  password String
+}
+
+model Promotion {
+  id          String   @id @default(uuid())
+  name        String
+  description String
+  image       String
+  startDate   DateTime
+  endDate     DateTime
+}
+
+model Feedback {
+  id      String @id @default(uuid())
+  name    String
+  image   String
+  rating  Float
+  comment String
+}
+
+model EventCategory {
+  id     String  @id @default(uuid())
+  name   String  @unique
+  events Event[] @relation("EventCategories")
+}
+
+model Event {
+  id         String          @id @default(uuid())
+  name       String
+  image      String
+  eventAt    DateTime
+  categories EventCategory[] @relation("EventCategories")
+}
+
+model FAQ {
+  id       String @id @default(uuid())
+  question String
+  answer   String
+}
