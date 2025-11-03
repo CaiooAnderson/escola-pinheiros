@@ -89,7 +89,7 @@ export default function AdminFeedback() {
   };
 
   return (
-    <div className="container mx-auto p-6 space-y-6 py-20">
+    <div className="container mx-auto p-6 space-y-6 py-30">
       <AdminHeader
         title="Feedbacks"
         buttonLabel="Novo Feedback"

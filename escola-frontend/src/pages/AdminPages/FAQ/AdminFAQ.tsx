@@ -89,7 +89,7 @@ export default function AdminFAQ() {
   };
 
   return (
-    <div className="container mx-auto p-6 space-y-6 py-20">
+    <div className="container mx-auto p-6 space-y-6 py-30">
       <AdminHeader
         title="Perguntas Frequentes"
         buttonLabel="Nova Pergunta"
