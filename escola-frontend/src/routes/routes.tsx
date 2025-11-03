@@ -26,9 +26,9 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <BaseLayout>
-        <Landing />
-      </BaseLayout>
+      <ClientLayout>
+        <Home />
+      </ClientLayout>
     ),
   },
   {
@@ -40,11 +40,11 @@ export const router = createBrowserRouter([
     ),
   },
   {
-    path: "/inicio",
+    path: "/painel",
     element: (
-      <ClientLayout>
-        <Home />
-      </ClientLayout>
+      <BaseLayout>
+        <Landing />
+      </BaseLayout>
     ),
   },
   {
