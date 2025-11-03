@@ -14,7 +14,7 @@ export default function Footer() {
     <footer
       className={`mt-2 ${
         isAdmin
-          ? "bg-card/60 text-secondary-dark"
+          ? "bg-card/60 text-primary-dark"
           : "bg-primary-light/10 text-primary-dark"
       }`}
     >
