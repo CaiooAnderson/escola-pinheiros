@@ -162,7 +162,7 @@ export default function EventForm({
           <div className="flex flex-col">
             <Label>Imagem do Evento</Label>
             <div
-              className="group w-40 h-40 border border-gray-300 hover:bg-secondary-light/20 hover:border-secondary-light rounded cursor-pointer relative overflow-hidden mx-auto"
+              className="group w-40 h-40 border border-gray-300 hover:bg-primary-light/20 hover:border-primary-light rounded cursor-pointer relative overflow-hidden mx-auto"
               onClick={() => document.getElementById("imageInput")?.click()}
             >
               {preview ? (
@@ -247,8 +247,8 @@ export default function EventForm({
             >
               <PopoverTrigger asChild>
                 <Button
-                  variant="outlineSecondary"
-                  className="w-full justify-start text-left font-normal"
+                  variant="outline"
+                  className="w-full justify-start text-left font-normal hover:bg-primary-light/20"
                 >
                   <span className="flex items-center text-text">
                     <CalendarIcon className="mr-2 h-4 w-4" />

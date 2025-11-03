@@ -112,7 +112,7 @@ export default function FeedbackForm({
           <div className="flex flex-col">
             <Label htmlFor="image">Foto da pessoa</Label>
             <div
-              className="group w-20 h-20 rounded-full border border-gray-300 hover:border-secondary-light hover:bg-secondary-light/20 cursor-pointer relative overflow-hidden mx-auto transition-colors duration-300"
+              className="group w-20 h-20 rounded-full border border-gray-300 hover:border-primary-light hover:bg-primary-light/20 cursor-pointer relative overflow-hidden mx-auto transition-colors duration-300"
               onClick={() => document.getElementById("imageInput")?.click()}
             >
               {!preview && (

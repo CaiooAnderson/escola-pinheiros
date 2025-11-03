@@ -158,7 +158,7 @@ export default function PromotionForm({
           <div className="flex flex-col">
             <Label htmlFor="image">Imagem da promoção</Label>
             <div
-              className="group sm:w-70 sm:h-90 w-50 h-70 border border-gray-300 rounded cursor-pointer relative overflow-hidden mx-auto hover:bg-secondary-light/20 hover:border-secondary-light transition-colors duration-300"
+              className="group sm:w-70 sm:h-90 w-50 h-70 border border-gray-300 rounded cursor-pointer relative overflow-hidden mx-auto hover:bg-primary-light/20 hover:border-primary-light transition-colors duration-300"
               onClick={() => document.getElementById("imageInput")?.click()}
             >
               {!preview ? (
@@ -201,8 +201,8 @@ export default function PromotionForm({
             >
               <PopoverTrigger asChild>
                 <Button
-                  variant="outlineSecondary"
-                  className="w-full justify-start text-left font-normal"
+                  variant="outline"
+                  className="w-full justify-start text-left font-normal hover:bg-primary-light/20"
                 >
                   <span className="flex items-center text-text">
                     <CalendarIcon className="mr-2 h-4 w-4" />
@@ -241,8 +241,8 @@ export default function PromotionForm({
             <Popover open={isEndPopoverOpen} onOpenChange={setIsEndPopoverOpen}>
               <PopoverTrigger asChild>
                 <Button
-                  variant="outlineSecondary"
-                  className="w-full justify-start text-left font-normal"
+                  variant="outline"
+                  className="w-full justify-start text-left font-normal hover:bg-primary-light/20"
                 >
                   <span className="flex items-center text-text">
                     <CalendarIcon className="mr-2 h-4 w-4" />
