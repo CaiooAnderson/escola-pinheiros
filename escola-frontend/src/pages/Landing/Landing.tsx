@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { FolderCog } from "lucide-react";
+import Logo from "@/assets/logo.png";
 
 export default function Landing() {
   const navigate = useNavigate();
@@ -10,7 +11,7 @@ export default function Landing() {
     <div className="landing-bg w-full flex items-center justify-center h-dvh relative">
       <div className="absolute top-1/4 transform -translate-y-1/2">
         <img
-          src="/src/assets/logo.png"
+          src={Logo}
           alt="Logo"
           className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 opacity-75 object-contain"
         />

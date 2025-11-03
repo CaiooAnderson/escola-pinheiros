@@ -12,6 +12,7 @@ import {
 import { toast } from "sonner";
 import { ArrowLeft, Eye, EyeOff, Lock } from "lucide-react";
 import { useAuth } from "@/components/context/AuthContext";
+import Logo from "@/assets/logo.png";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -96,7 +97,7 @@ export default function Login() {
 
       <div className="mb-2 flex flex-col items-center">
         <img
-          src="/src/assets/logo.png"
+          src={Logo}
           alt="Logo"
           className="w-16 h-16 sm:w-24 sm:h-24 object-contain mb-2"
         />

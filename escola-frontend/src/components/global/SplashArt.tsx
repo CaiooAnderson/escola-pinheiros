@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Progress } from "@/components/ui/progress";
 import { Link } from "react-router-dom";
+import Logo from "@/assets/logo.png";
 
 interface SplashArtProps {
   onComplete?: () => void;
@@ -74,7 +75,7 @@ export default function SplashArt({ onComplete }: SplashArtProps) {
             )}
 
             <motion.img
-              src="/src/assets/logo.png"
+              src={Logo}
               alt="Centro Educacional Pinheiros"
               className="w-32 h-32 sm:w-40 sm:h-40 object-contain drop-shadow-2xl relative z-10"
               animate={
