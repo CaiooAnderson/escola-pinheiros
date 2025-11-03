@@ -88,8 +88,8 @@ export default function Login() {
       <Button
         variant="default"
         size="icon"
-        className="absolute top-4 left-4 shadow-lg hover:scale-[0.96] bg-primary border-2 border-white/20 backdrop-blur-md text-white hover:bg-primary-dark transition-all duration-300"
-        onClick={() => navigate("/")}
+        className="absolute top-4 left-4 shadow-lg hover:scale-[0.96] bg-primary hover:bg-primary-dark border-card/50 backdrop-blur-lg border-1 text-white transition-all duration-300"
+        onClick={() => navigate("/painel")}
       >
         <ArrowLeft className="h-5 w-5" />
       </Button>
@@ -98,9 +98,9 @@ export default function Login() {
         <img
           src="/src/assets/logo.png"
           alt="Logo"
-          className="w-16 h-16 sm:w-20 sm:h-20 object-contain mb-2"
+          className="w-16 h-16 sm:w-24 sm:h-24 object-contain mb-2"
         />
-        <h2 className="text-lg sm:text-2xl font-primary text-primary-dark font-semibold text-center">
+        <h2 className="text-lg sm:text-2xl font-primary text-text font-semibold text-center">
           Área do Administrador
         </h2>
         <p className="text-sm text-text text-center max-w-md mt-1">
