@@ -1,19 +1,23 @@
 import { RouterProvider } from "react-router-dom";
 import { router } from "./routes/routes";
 import { Toaster } from "sonner";
-import Loading from "@/components/global/Loading";
+import SplashArt from "@/components/global/SplashArt";
 import { useEffect, useState } from "react";
 
 function App() {
-  const [loading, setLoading] = useState(true);
+  const [showSplash, setShowSplash] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 5000);
+    const timer = setTimeout(() => {
+      setShowSplash(false);
+      window.history.replaceState(null, "", "/");
+    }, 4000);
+
     return () => clearTimeout(timer);
   }, []);
 
-  if (loading) {
-    return <Loading />;
+  if (showSplash) {
+    return <SplashArt onComplete={() => setShowSplash(false)} />;
   }
 
   return (
