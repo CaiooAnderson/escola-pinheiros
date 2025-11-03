@@ -8,7 +8,7 @@ export default function Landing() {
 
   return (
     <div className="landing-bg w-full flex items-center justify-center h-dvh relative">
-      <div className="absolute inset-0 flex items-start justify-center pointer-events-none">
+      <div className="absolute top-1/4 transform -translate-y-1/2">
         <img
           src="/src/assets/logo.png"
           alt="Logo"
@@ -16,7 +16,7 @@ export default function Landing() {
         />
       </div>
 
-      <Card className="w-full sm:max-w-sm md:max-w-md lg:max-w-lg text-center p-6 shadow-xl mx-2 bg-card/60 backdrop-blur-xl border border-card/40 relative z-10">
+      <Card className="w-full sm:max-w-sm md:max-w-md lg:max-w-lg text-center p-6 shadow-xl mx-2 bg-card/60 backdrop-blur-xl border border-card/40 relative z-10 mt-48 md:mt-56 lg:mt-64">
         <CardHeader>
           <CardTitle className="text-4xl font-primary text-primary-dark">
             Bem-vindo!
@@ -26,7 +26,7 @@ export default function Landing() {
           <Button
             variant="default"
             className="bg-primary hover:bg-primary-dark text-white w-3/4 sm:w-48 py-3 text-lg font-semibold transition-all duration-300 hover:scale-105 mb-4"
-            onClick={() => navigate("/inicio")}
+            onClick={() => navigate("/")}
           >
             Acessar Site
           </Button>
