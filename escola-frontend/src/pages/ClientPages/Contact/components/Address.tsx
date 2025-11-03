@@ -40,7 +40,7 @@ export default function Address() {
         >
           <Mail className="text-primary-dark w-7 h-7 flex-shrink-0 mt-1" />
           <MarqueeEffect>
-            <span className="flex-1 text-lg font-medium">
+            <span className="flex-1 text-lg font-medium cursor-pointer">
               pinheirosonline@gmail.com
             </span>
           </MarqueeEffect>

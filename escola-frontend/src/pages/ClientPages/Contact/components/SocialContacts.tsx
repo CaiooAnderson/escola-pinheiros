@@ -16,7 +16,7 @@ const socialContacts = [
   // },
   {
     label: "Facebook",
-    url: "https://www.facebook.com/dirijasemcomplicar/",
+    url: "https://www.facebook.com/pinheiros.escola/",
   },
 ];
 
