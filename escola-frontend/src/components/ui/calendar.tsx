@@ -14,7 +14,7 @@ function Calendar({
   classNames,
   showOutsideDays = true,
   captionLayout = "label",
-  buttonVariant = "outlineSecondary",
+  buttonVariant = "outline",
   formatters,
   components,
   ...props
@@ -199,10 +199,10 @@ function CalendarDayButton({
       }
       className={cn(
         "flex aspect-square sm:h-10 sm:w-10 h-8 w-8 items-center justify-center rounded-md text-sm transition-colors",
-        "hover:bg-secondary-light/20",
-        !isToday && "hover:text-secondary",
-        "data-[today=true]:ring-2 data-[today=true]:ring-secondary data-[today=true]:font-bold",
-        "data-[selected-single=true]:bg-secondary data-[selected-single=true]:text-secondary-foreground",
+        "hover:bg-primary-light/20",
+        !isToday && "hover:text-primary",
+        "data-[today=true]:ring-2 data-[today=true]:ring-primary data-[today=true]:font-bold",
+        "data-[selected-single=true]:bg-primary data-[selected-single=true]:text-primary-foreground",
         defaultClassNames.day,
         className
       )}
