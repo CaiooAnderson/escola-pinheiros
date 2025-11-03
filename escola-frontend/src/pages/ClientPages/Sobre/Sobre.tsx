@@ -234,7 +234,7 @@ export default function Sobre() {
 
   return (
     <div className="w-full bg-background">
-      <div className="container mx-auto py-20 px-4">
+      <div className="container mx-auto py-30 px-4">
         <AnimatedSection direction="up" animateOnMount>
           <div className="text-center mb-12">
             <h1 className="text-4xl sm:text-5xl font-bold font-primary text-primary-dark mb-6">

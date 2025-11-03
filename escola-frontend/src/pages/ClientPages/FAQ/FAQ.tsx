@@ -49,7 +49,7 @@ export default function FAQ({ isAdmin, limit }: FAQProps) {
 
   return (
     <div className="w-full">
-      <div className={isAdmin ? "py-0" : "container mx-auto py-20 px-4"}>
+      <div className={isAdmin ? "py-0" : "container mx-auto py-30 px-4"}>
         <div className="max-w-3xl mx-auto">
           <AnimatedSection direction="up">
             {!isAdmin && (

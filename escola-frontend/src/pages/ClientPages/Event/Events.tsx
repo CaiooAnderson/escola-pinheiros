@@ -138,7 +138,7 @@ export default function Events({ isAdmin = false }: EventsProps) {
       className={
         isAdmin
           ? "w-full bg-transparent py-0 px-2"
-          : "container mx-auto py-20 px-4"
+          : "container mx-auto py-30 px-4"
       }
     >
       <AnimatedSection direction="up" animateOnMount>
