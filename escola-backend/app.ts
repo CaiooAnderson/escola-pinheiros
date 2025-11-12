@@ -15,7 +15,12 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["https://escola-pinheiros.vercel.app", "https://www.pinheirosonline.net/", "http://localhost:5173"],
+    origin: [
+      "https://escola-pinheiros.vercel.app",
+      "https://www.pinheirosonline.net/",
+      "http://localhost:5173",
+      "http://localhost:4173",
+    ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
