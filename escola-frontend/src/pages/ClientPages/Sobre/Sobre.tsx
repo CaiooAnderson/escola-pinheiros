@@ -15,6 +15,62 @@ import {
   NotebookPen,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import Staff from "./components/Staff";
+import diretor1 from "@/assets/diretor1.png";
+import diretor2 from "@/assets/diretor2.png";
+import coordenador1 from "@/assets/coordenadora1.png";
+import coordenador2 from "@/assets/coordenadora2.png";
+import coordenador3 from "@/assets/coordenadora3.png";
+import FloatButton from "@/components/global/FloatButton";
+
+const teamMembers = {
+  directors: [
+    {
+      name: "Iza D'alegria",
+      role: "Diretora Fundadora",
+      // imageUrl: diretor0,
+      fallback: "ID",
+    },
+    {
+      name: "Leandro D'alegria",
+      role: "Diretor Fundador",
+      imageUrl: diretor1,
+      fallback: "LD",
+    },
+    {
+      name: "Carlos Alberto",
+      role: "Diretor Pedagógico",
+      imageUrl: diretor2,
+      fallback: "CA",
+    },
+    {
+      name: "Rosilene",
+      role: "Diretora Administrativa",
+      // imageUrl: diretor3,
+      fallback: "Ro",
+    },
+  ],
+  coordinators: [
+    {
+      name: "Rejane Oliveira",
+      role: "Coord. Fund II e Ensino Médio",
+      imageUrl: coordenador1,
+      fallback: "RO",
+    },
+    {
+      name: "Letícia Gonsalves",
+      role: "Coord. Educação Infantil",
+      imageUrl: coordenador2,
+      fallback: "LG",
+    },
+    {
+      name: "Roberta Lígia",
+      role: "Coord Fundamental I",
+      imageUrl: coordenador3,
+      fallback: "RL",
+    },
+  ],
+};
 
 const ExpandableParagraph = ({
   children,
@@ -398,41 +454,51 @@ export default function Sobre() {
         </AnimatedSection>
 
         <AnimatedSection direction="up" delay={0.4}>
-          <Card className="bg-primary/5 border-primary/20 shadow-xl sm:w-xl w-auto mx-auto">
-            <CardContent className="p-8 text-center">
-              <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <School className="w-8 h-8 text-primary" />
-              </div>
-              <h3 className="text-2xl font-bold font-primary text-primary-dark mb-4">
-                Venha nos Conhecer!
-              </h3>
-              <p className="text-lg font-secondary mb-6 opacity-90">
-                Descubra por que famílias confiam na nossa Escola há mais de{" "}
-                {calculateYearsOfExperience()} anos para oferecer a melhor
-                formação educacional e humana aos seus alunos.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button
-                  size="lg"
-                  variant="ghost"
-                  className="font-semibold text-foreground border-primary border-1 transition-colors"
-                  asChild
-                >
-                  <Link to="/contato">Agendar Visita</Link>
-                </Button>
-                <Button
-                  size="lg"
-                  variant="ghost"
-                  className="font-semibold text-foreground border-primary border-1 transition-colors"
-                  asChild
-                >
-                  <Link to="/eventos">Ver Nossos Eventos</Link>
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
+          <div className="mb-16">
+            <Card className="bg-primary/5 border-primary/20 shadow-xl sm:w-xl w-auto mx-auto">
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <School className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="text-2xl font-bold font-primary text-primary-dark mb-4">
+                  Venha nos Conhecer!
+                </h3>
+                <p className="text-lg font-secondary mb-6 opacity-90">
+                  Descubra por que famílias confiam na nossa Escola há mais de{" "}
+                  {calculateYearsOfExperience()} anos para oferecer a melhor
+                  formação educacional e humana aos seus alunos.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button
+                    size="lg"
+                    variant="ghost"
+                    className="font-semibold text-foreground border-primary border-1 transition-colors"
+                    asChild
+                  >
+                    <Link to="/contato">Agendar Visita</Link>
+                  </Button>
+                  <Button
+                    size="lg"
+                    variant="ghost"
+                    className="font-semibold text-foreground border-primary border-1 transition-colors"
+                    asChild
+                  >
+                    <Link to="/eventos">Ver Nossos Eventos</Link>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </AnimatedSection>
+
+        <AnimatedSection direction="up" delay={0.35}>
+          <Staff
+            directors={teamMembers.directors}
+            coordinators={teamMembers.coordinators}
+          />
         </AnimatedSection>
       </div>
+      <FloatButton />
     </div>
   );
 }
