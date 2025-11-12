@@ -9,6 +9,7 @@ import AnimatedSection from "@/components/animations/AnimatedSection";
 import MarqueeEffect from "@/components/animations/MarqueeEffect";
 import { toast } from "sonner";
 import { FAQSkeleton } from "@/components/skeletons/FAQSkeleton";
+import FloatButton from "@/components/global/FloatButton";
 
 type FAQItem = {
   id: string;
@@ -33,10 +34,12 @@ export default function FAQ({ isAdmin, limit }: FAQProps) {
         if (res.ok) {
           setFaqs(data.data || data);
         } else {
-          toast.error("Erro ao buscar FAQs");
+          toast.error("Erro ao buscar as perguntas");
         }
       } catch (err) {
-        toast.error("Erro na conexão com a API");
+        toast.error(
+          "Erro na conexão com o servidor. Tente novamente mais tarde"
+        );
       } finally {
         setLoading(false);
       }
@@ -105,6 +108,7 @@ export default function FAQ({ isAdmin, limit }: FAQProps) {
           )}
         </div>
       </div>
+      <FloatButton />
     </div>
   );
 }

@@ -59,7 +59,7 @@ export default function Promotion({ isAdmin = false }: PromotionProps) {
           toast.error("Erro ao buscar promoções");
         }
       } catch (err) {
-        toast.error("Erro na conexão com a API");
+        toast.error("Erro na conexão com o servidor. Tente novamente mais tarde");
       } finally {
         setLoading(false);
       }

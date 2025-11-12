@@ -37,6 +37,7 @@ import {
   EventSkeletonAdmin,
 } from "@/components/skeletons/EventSkeleton";
 import { ImageSkeleton } from "@/components/skeletons/ImageSkeleton";
+import FloatButton from "@/components/global/FloatButton";
 
 type EventItem = {
   id: string;
@@ -350,6 +351,7 @@ export default function Events({ isAdmin = false }: EventsProps) {
           </Accordion>
         </>
       )}
+      <FloatButton />
     </div>
   );
 }

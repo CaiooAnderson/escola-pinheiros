@@ -2,6 +2,7 @@ import Hero from "../Home/components/Hero";
 import About from "../Home/components/About";
 import Promotion from "../Home/components/Promotion";
 import Feedback from "../Home/components/Feedback";
+import FloatButton from "@/components/global/FloatButton";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <About />
       <Promotion />
       <Feedback className="py-20" />
+      <FloatButton />
     </div>
   );
 }
