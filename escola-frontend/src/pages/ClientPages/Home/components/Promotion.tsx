@@ -15,9 +15,9 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { toast } from "sonner";
 import PromotionSkeleton from "@/components/skeletons/PromotionSkeleton";
 import { ImageSkeleton } from "@/components/skeletons/ImageSkeleton";
+import promotionData from "./Promotion.json";
 
 type Promotion = {
   id: string;
@@ -40,32 +40,20 @@ export default function Promotion({ isAdmin = false }: PromotionProps) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchPromotions = async () => {
-      try {
-        const res = await fetch(`${import.meta.env.VITE_API_URL}/promotions`);
-        const data = await res.json();
-
-        if (res.ok) {
-          const now = new Date();
-          const activePromotions = (data.data || data).filter(
-            (promo: Promotion) => {
-              const start = new Date(promo.startDate);
-              const end = new Date(promo.endDate);
-              return start <= now && end >= now;
-            }
-          );
-          setPromotions(activePromotions);
-        } else {
-          toast.error("Erro ao buscar promoções");
+    const timer = setTimeout(() => {
+      const now = new Date();
+      const activePromotions = promotionData.promotions.filter(
+        (promo: Promotion) => {
+          const start = new Date(promo.startDate);
+          const end = new Date(promo.endDate);
+          return start <= now && end >= now;
         }
-      } catch (err) {
-        toast.error("Erro na conexão com o servidor. Tente novamente mais tarde");
-      } finally {
-        setLoading(false);
-      }
-    };
+      );
+      setPromotions(activePromotions);
+      setLoading(false);
+    }, 500);
 
-    fetchPromotions();
+    return () => clearTimeout(timer);
   }, []);
 
   const formatDate = (dateStr: string) => {
