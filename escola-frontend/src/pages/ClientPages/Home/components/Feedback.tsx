@@ -18,21 +18,27 @@ import {
 import Rating from "@/components/animations/Rating";
 import { Sticker } from "lucide-react";
 import MarqueeEffect from "@/components/animations/MarqueeEffect";
-import { toast } from "sonner";
 import { FeedbackSkeleton } from "@/components/skeletons/FeedbackSkeleton";
 import { Card, CardContent } from "@/components/ui/card";
+import feedbackData from "./Feedback.json";
+
+import caioAnderson from "@/assets/depoimentos/caio-anderson.jpeg";
 
 type FeedbackItem = {
   id: string;
   name: string;
   comment: string;
   rating: number;
-  imageUrl: string;
+  image: string;
 };
 
 type FeedbackProps = {
   className?: string;
   isAdmin?: boolean;
+};
+
+const imageMap: { [key: string]: string } = {
+  "caio-anderson": caioAnderson,
 };
 
 export default function Feedback({
@@ -45,28 +51,17 @@ export default function Feedback({
   const MAX_LENGTH = 120;
 
   useEffect(() => {
-    const fetchFeedbacks = async () => {
-      try {
-        const res = await fetch(`${import.meta.env.VITE_API_URL}/feedbacks`);
-        const data = await res.json();
+    const timer = setTimeout(() => {
+      setFeedbacks(feedbackData.feedbacks);
+      setLoading(false);
+    }, 500);
 
-        if (res.ok && Array.isArray(data)) {
-          setFeedbacks(data);
-        } else if (res.ok && data.data) {
-          setFeedbacks(data.data);
-        } else {
-          setFeedbacks([]);
-        }
-      } catch (err) {
-        toast.error("Erro ao buscar depoimentos");
-        setFeedbacks([]);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchFeedbacks();
+    return () => clearTimeout(timer);
   }, []);
+
+  const getImageSrc = (imageName: string) => {
+    return imageMap[imageName] || "";
+  };
 
   return (
     <div className={`w-full bg-background ${className}`}>
@@ -101,6 +96,7 @@ export default function Feedback({
                 const preview = isLong
                   ? fb.comment.slice(0, MAX_LENGTH) + "..."
                   : fb.comment;
+                const imageSrc = getImageSrc(fb.image);
 
                 return (
                   <CarouselItem
@@ -110,7 +106,7 @@ export default function Feedback({
                     <Card className="overflow-hidden border-muted-light hover:border-primary shadow-md hover:shadow-primary/40 w-72 h-90 mx-auto">
                       <CardContent className="flex flex-col items-center text-center p-6">
                         <Avatar className="w-20 h-20 mb-4">
-                          <AvatarImage src={fb.imageUrl} alt={fb.name} />
+                          <AvatarImage src={imageSrc} alt={fb.name} />
                           <AvatarFallback className="flex items-center justify-center bg-gray-200">
                             <Sticker className="w-10 h-10 text-gray-400" />
                           </AvatarFallback>
@@ -141,10 +137,7 @@ export default function Feedback({
                               <DialogContent className="max-w-lg max-h-[80vh] overflow-y-auto">
                                 <DialogHeader className="flex flex-col items-center text-center gap-2">
                                   <Avatar className="w-20 h-20 mb-2">
-                                    <AvatarImage
-                                      src={fb.imageUrl}
-                                      alt={fb.name}
-                                    />
+                                    <AvatarImage src={imageSrc} alt={fb.name} />
                                     <AvatarFallback className="flex items-center justify-center bg-gray-200">
                                       <Sticker className="w-10 h-10 text-gray-400" />
                                     </AvatarFallback>
