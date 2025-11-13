@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu as MenuIcon, X } from "lucide-react";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import Logo from "@/assets/logo.png";
+import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/global/ModeToggle";
 
 type NavLink = {
@@ -22,7 +21,7 @@ export default function Navbar({ links }: NavbarProps) {
   const defaultLinks: NavLink[] = [
     { name: "Início", path: "/" },
     { name: "Sobre", path: "/sobre" },
-    { name: "Eventos", path: "/eventos" },
+    // { name: "Eventos", path: "/eventos" },
     { name: "Perguntas Frequentes", path: "/perguntas-frequentes" },
     { name: "Contato", path: "/contato" },
   ];
@@ -41,8 +40,13 @@ export default function Navbar({ links }: NavbarProps) {
     if (mobileOpen && !scrolled) return "bg-card shadow-md";
     if (mobileOpen && scrolled) return "bg-card backdrop-blur-sm";
     if (!mobileOpen && scrolled)
-      return "bg-card/60 backdrop-blur-sm shadow-lg md:py-0.5 py-0";
+      return "bg-card/60 backdrop-blur-sm shadow-lg lg:py-0.5 py-0";
     return "bg-transparent";
+  };
+
+  const handlePortalClick = (url: string) => {
+    setMobileOpen(false);
+    window.open(url, "_blank");
   };
 
   return (
@@ -50,14 +54,28 @@ export default function Navbar({ links }: NavbarProps) {
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out ${headerClasses()}`}
     >
       <div className="w-full container mx-auto flex items-center justify-between p-4">
-        <Link to="/painel" className="flex items-center">
-          <Avatar className="h-10 w-10">
-            <AvatarImage src={Logo} alt="Avatar" />
-            <AvatarFallback>CEP</AvatarFallback>
-          </Avatar>
-        </Link>
+        <div className="hidden lg:flex flex-col sm:flex-row gap-2 sm:gap-4">
+          <Button
+            variant="default"
+            size="sm"
+            onClick={() =>
+              handlePortalClick("https://pinheiros.alunos.digital/login")
+            }
+          >
+            Portal do Aluno
+          </Button>
+          <Button
+            variant="default"
+            size="sm"
+            onClick={() =>
+              handlePortalClick("https://pinheiros.professores.digital/login")
+            }
+          >
+            Portal do Professor
+          </Button>
+        </div>
 
-        <div className="hidden md:flex gap-8 items-center">
+        <div className="hidden lg:flex gap-8 items-center">
           {navLinks.map((link) => (
             <Link
               key={link.path}
@@ -82,30 +100,55 @@ export default function Navbar({ links }: NavbarProps) {
           <ModeToggle />
         </div>
 
-        <button
-          className={`md:hidden transition-colors duration-200 ${
-            scrolled || mobileOpen
-              ? isAdmin
-                ? "text-gray-700 hover:text-primary"
-                : "text-gray-700 hover:text-primary"
-              : "text-muted-dark"
-          }`}
-          onClick={() => setMobileOpen(!mobileOpen)}
-        >
-          {mobileOpen ? (
-            <X className="h-6 w-6" />
-          ) : (
-            <MenuIcon className="h-6 w-6" />
-          )}
-        </button>
+        <div className="lg:hidden flex-1 flex justify-center">
+          <button
+            className={`transition-colors duration-200 flex items-center justify-center ${
+              scrolled || mobileOpen
+                ? isAdmin
+                  ? "text-gray-700 hover:text-primary"
+                  : "text-gray-700 hover:text-primary"
+                : "text-muted-dark"
+            }`}
+            onClick={() => setMobileOpen(!mobileOpen)}
+          >
+            {mobileOpen ? (
+              <X className="h-6 w-6 cursor-pointer" />
+            ) : (
+              <MenuIcon className="h-6 w-6 cursor-pointer hover:text-primary" />
+            )}
+          </button>
+        </div>
       </div>
 
       {mobileOpen && (
         <div
-          className={`md:hidden flex flex-col gap-1 px-4 pb-4 transition-all duration-200 ${
+          className={`lg:hidden flex flex-col gap-1 px-4 pb-4 transition-all duration-200 ${
             scrolled ? "bg-card/80 shadow-md" : "bg-card shadow-md"
           }`}
         >
+          <div className="flex flex-row gap-2 mb-4 justify-center">
+            <Button
+              variant="default"
+              size="sm"
+              className="w-3xs"
+              onClick={() =>
+                handlePortalClick("https://pinheiros.alunos.digital/login")
+              }
+            >
+              Portal do Aluno
+            </Button>
+            <Button
+              variant="default"
+              size="sm"
+              className="w-3xs"
+              onClick={() =>
+                handlePortalClick("https://pinheiros.professores.digital/login")
+              }
+            >
+              Portal do Professor
+            </Button>
+          </div>
+
           {navLinks.map((link) => (
             <Link
               key={link.path}
