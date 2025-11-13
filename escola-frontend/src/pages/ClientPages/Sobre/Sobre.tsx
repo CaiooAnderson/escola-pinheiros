@@ -16,11 +16,11 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import Staff from "./components/Staff";
-import diretor1 from "@/assets/diretor1.png";
-import diretor2 from "@/assets/diretor2.png";
-import coordenador1 from "@/assets/coordenadora1.png";
-import coordenador2 from "@/assets/coordenadora2.png";
-import coordenador3 from "@/assets/coordenadora3.png";
+import diretor1 from "@/assets/diretores/diretor1.png";
+import diretor2 from "@/assets/diretores/diretor2.png";
+import coordenador1 from "@/assets/coordenadores/coordenadora1.png";
+import coordenador2 from "@/assets/coordenadores/coordenadora2.png";
+import coordenador3 from "@/assets/coordenadores/coordenadora3.png";
 import FloatButton from "@/components/global/FloatButton";
 
 const teamMembers = {
@@ -280,11 +280,11 @@ export default function Sobre() {
       icon: <Trophy className="w-6 h-6" />,
     },
     {
-      value: 500,
+      value: 1000,
       label: "Alunos Formados",
       icon: <GraduationCap className="w-6 h-6" />,
     },
-    { value: 40, label: "Profissionais", icon: <Users className="w-6 h-6" /> },
+    { value: 70, label: "Profissionais", icon: <Users className="w-6 h-6" /> },
     { value: 99, label: "Satisfação", icon: <Heart className="w-6 h-6" /> },
   ];
 
@@ -477,14 +477,14 @@ export default function Sobre() {
                   >
                     <Link to="/contato">Agendar Visita</Link>
                   </Button>
-                  <Button
+                  {/* <Button
                     size="lg"
                     variant="ghost"
                     className="font-semibold text-foreground border-primary border-1 transition-colors"
                     asChild
                   >
                     <Link to="/eventos">Ver Nossos Eventos</Link>
-                  </Button>
+                  </Button> */}
                 </div>
               </CardContent>
             </Card>

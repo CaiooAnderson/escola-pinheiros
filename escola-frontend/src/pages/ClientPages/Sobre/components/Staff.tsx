@@ -27,7 +27,7 @@ const StaffMemberCard = ({
   <AnimatedSection direction="up" delay={delay}>
     <Card className="border-0 shadow-none bg-transparent relative">
       <CardContent className="p-0 flex flex-col items-center text-center">
-        <Avatar className={`${avatarSize} mb-0`}>
+        <Avatar className={`${avatarSize} mb-0 border-1 border-primary bg-primary-light`}>
           <AvatarImage
             src={member.imageUrl}
             alt={member.name}
@@ -37,7 +37,7 @@ const StaffMemberCard = ({
             {member.fallback || <Users className="w-12 h-12 text-primary" />}
           </AvatarFallback>
         </Avatar>
-        <Card className="w-3xs bg-primary text-text p-4 rounded-lg border-0 -mt-6 z-10 relative">
+        <Card className="w-3xs bg-primary-dark text-text p-4 rounded-lg border-0 -mt-6 z-10 relative">
           <CardContent className="p-0">
             <div className="flex flex-col space-y-1 items-start">
               <span className="text-lg font-medium font-primary">
