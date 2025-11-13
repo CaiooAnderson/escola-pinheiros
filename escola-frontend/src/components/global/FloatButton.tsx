@@ -28,7 +28,7 @@ export default function FloatButton() {
         </div>
       </button>
 
-      <div className="absolute inset-0 bg-green-500 rounded-full animate-ping opacity-20 -z-10"></div>
+      <div className="absolute inset-0 bg-primary rounded-full animate-ping opacity-20 -z-10"></div>
     </div>
   );
 }
