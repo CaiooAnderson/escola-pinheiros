@@ -1,0 +1,64 @@
+{
+  "faqs": [
+    {
+      "id": "1",
+      "question": "Qual é o horário de funcionamento da escola?",
+      "answer": "Nosso horário de funcionamento é de segunda a sexta-feira, das 7h às 18h. As aulas regulares ocorrem nos turnos da manhã (7h30 às 12h) e tarde (13h às 17h30)."
+    },
+    {
+      "id": "2",
+      "question": "Qual é a proposta pedagógica da escola?",
+      "answer": "Nossa proposta pedagógica é baseada no desenvolvimento integral do aluno, combinando excelência acadêmica com formação de valores. Trabalhamos com metodologias ativas que estimulam a curiosidade, criatividade e pensamento crítico."
+    },
+    {
+      "id": "3",
+      "question": "Como é feita a matrícula?",
+      "answer": "A matrícula pode ser realizada presencialmente na secretaria da escola ou através do nosso site. É necessário apresentar documentos pessoais do aluno e responsáveis, comprovante de residência e histórico escolar (para transferências)."
+    },
+    {
+      "id": "4",
+      "question": "A escola oferece atividades extracurriculares?",
+      "answer": "Sim! Oferecemos diversas atividades como futebol, judô, ballet, música, robótica e aulas de reforço. As atividades são opcionais e têm custo adicional."
+    },
+    {
+      "id": "5",
+      "question": "Qual é o valor das mensalidades?",
+      "answer": "Os valores das mensalidades variam de acordo com a série e turno. Entre em contato conosco para obter informações detalhadas sobre valores e condições de pagamento."
+    },
+    {
+      "id": "6",
+      "question": "A escola fornece material didático?",
+      "answer": "Sim, fornecemos todo o material didático necessário. O valor está incluso na mensalidade e inclui livros, apostilas e materiais de apoio específicos para cada série."
+    },
+    {
+      "id": "7",
+      "question": "Como é a comunicação com os pais?",
+      "answer": "Utilizamos um aplicativo exclusivo para comunicação com os pais, onde enviamos boletins, comunicados, agenda de atividades e podemos agendar reuniões. Também mantemos contato via WhatsApp e e-mail."
+    },
+    {
+      "id": "8",
+      "question": "A escola tem uniforme?",
+      "answer": "Sim, temos uniforme obrigatório para todos os alunos. O uniforme completo inclui camiseta, calça/bermuda, agasalho e mochila. Pode ser adquirido na secretaria da escola."
+    },
+    {
+      "id": "9",
+      "question": "Qual é a política de segurança da escola?",
+      "answer": "Temos monitoramento por câmeras 24h, portaria com controle de acesso, brigada de incêndio treinada e protocolos de segurança rigorosos. Todos os funcionários passam por verificação de antecedentes."
+    },
+    {
+      "id": "10",
+      "question": "Como funciona o período integral?",
+      "answer": "O período integral é opcional e inclui almoço, lanches, acompanhamento pedagógico, atividades recreativas e orientação para tarefas de casa. Funciona das 7h às 18h com programação diversificada."
+    },
+    {
+      "id": "11",
+      "question": "A escola aceita transferências durante o ano letivo?",
+      "answer": "Sim, aceitamos transferências durante todo o ano, desde que haja vagas disponíveis. É necessário agendar uma avaliação pedagógica e apresentar toda a documentação exigida."
+    },
+    {
+      "id": "12",
+      "question": "Há descontos para irmãos?",
+      "answer": "Sim, oferecemos descontos progressivos para famílias com mais de um filho matriculado. O desconto aumenta a cada irmão adicional. Consulte nossa secretaria para valores específicos."
+    }
+  ]
+}

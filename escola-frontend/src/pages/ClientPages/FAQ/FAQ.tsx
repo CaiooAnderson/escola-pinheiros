@@ -7,9 +7,9 @@ import {
 } from "@/components/ui/accordion";
 import AnimatedSection from "@/components/animations/AnimatedSection";
 import MarqueeEffect from "@/components/animations/MarqueeEffect";
-import { toast } from "sonner";
 import { FAQSkeleton } from "@/components/skeletons/FAQSkeleton";
 import FloatButton from "@/components/global/FloatButton";
+import faqData from "./FAQ.json";
 
 type FAQItem = {
   id: string;
@@ -27,25 +27,12 @@ export default function FAQ({ isAdmin, limit }: FAQProps) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchFAQs = async () => {
-      try {
-        const res = await fetch(`${import.meta.env.VITE_API_URL}/faqs`);
-        const data = await res.json();
-        if (res.ok) {
-          setFaqs(data.data || data);
-        } else {
-          toast.error("Erro ao buscar as perguntas");
-        }
-      } catch (err) {
-        toast.error(
-          "Erro na conexão com o servidor. Tente novamente mais tarde"
-        );
-      } finally {
-        setLoading(false);
-      }
-    };
+    const timer = setTimeout(() => {
+      setFaqs(faqData.faqs);
+      setLoading(false);
+    }, 500);
 
-    fetchFAQs();
+    return () => clearTimeout(timer);
   }, []);
 
   const displayedFaqs = limit ? faqs.slice(0, limit) : faqs;
@@ -60,12 +47,16 @@ export default function FAQ({ isAdmin, limit }: FAQProps) {
                 <h1 className="text-3xl sm:text-4xl font-bold font-primary text-primary-dark mb-2">
                   Perguntas Frequentes
                 </h1>
+                <p className="text-lg text-muted-dark font-secondary">
+                  Encontre respostas para as dúvidas mais comuns sobre nossa
+                  escola
+                </p>
               </div>
             )}
           </AnimatedSection>
 
           {loading ? (
-            <FAQSkeleton count={10} />
+            <FAQSkeleton count={limit || 6} />
           ) : displayedFaqs.length === 0 ? (
             <div
               className={`w-full flex justify-center ${
