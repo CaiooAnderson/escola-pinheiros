@@ -16,8 +16,10 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import Staff from "./components/Staff";
+import diretor0 from "@/assets/diretores/diretor0.png";
 import diretor1 from "@/assets/diretores/diretor1.png";
 import diretor2 from "@/assets/diretores/diretor2.png";
+import diretor3 from "@/assets/diretores/diretor3.png";
 import coordenador1 from "@/assets/coordenadores/coordenadora1.png";
 import coordenador2 from "@/assets/coordenadores/coordenadora2.png";
 import coordenador3 from "@/assets/coordenadores/coordenadora3.png";
@@ -28,7 +30,7 @@ const teamMembers = {
     {
       name: "Iza D'alegria",
       role: "Diretora Fundadora",
-      // imageUrl: diretor0,
+      imageUrl: diretor0,
       fallback: "ID",
     },
     {
@@ -44,15 +46,15 @@ const teamMembers = {
       fallback: "CA",
     },
     {
-      name: "Rosilene",
+      name: "Rosilene Campos",
       role: "Diretora Administrativa",
-      // imageUrl: diretor3,
-      fallback: "Ro",
+      imageUrl: diretor3,
+      fallback: "RC",
     },
   ],
   coordinators: [
     {
-      name: "Rejane Oliveira",
+      name: "Rejane de Oliveira",
       role: "Coord. Fund II e Ensino Médio",
       imageUrl: coordenador1,
       fallback: "RO",
