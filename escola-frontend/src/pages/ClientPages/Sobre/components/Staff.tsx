@@ -27,7 +27,9 @@ const StaffMemberCard = ({
   <AnimatedSection direction="up" delay={delay}>
     <Card className="border-0 shadow-none bg-transparent relative">
       <CardContent className="p-0 flex flex-col items-center text-center">
-        <Avatar className={`${avatarSize} mb-0 border-1 border-primary bg-primary-light`}>
+        <Avatar
+          className={`${avatarSize} mb-0 border-1 border-primary bg-primary-light`}
+        >
           <AvatarImage
             src={member.imageUrl}
             alt={member.name}
@@ -61,14 +63,15 @@ export default function Staff({ directors, coordinators }: StaffSectionProps) {
         <h3 className="text-3xl font-bold font-primary text-primary-dark mb-8 text-center">
           Nossos Diretores
         </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="flex flex-wrap justify-center gap-8 max-w-6xl mx-auto">
           {directors.map((director, index) => (
-            <StaffMemberCard
-              key={director.name}
-              member={director}
-              delay={0.1 + index * 0.1}
-              avatarSize="w-48 h-48"
-            />
+            <div key={director.name} className="flex justify-center">
+              <StaffMemberCard
+                member={director}
+                delay={0.1 + index * 0.1}
+                avatarSize="w-48 h-48"
+              />
+            </div>
           ))}
         </div>
       </div>
@@ -77,14 +80,15 @@ export default function Staff({ directors, coordinators }: StaffSectionProps) {
         <h3 className="text-3xl font-bold font-primary text-primary-dark mb-8 text-center">
           Nossos Coordenadores
         </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="flex flex-wrap justify-center gap-8 max-w-6xl mx-auto">
           {coordinators.map((coordinator, index) => (
-            <StaffMemberCard
-              key={coordinator.name}
-              member={coordinator}
-              delay={0.3 + index * 0.1}
-              avatarSize="w-40 h-40"
-            />
+            <div key={coordinator.name} className="flex justify-center">
+              <StaffMemberCard
+                member={coordinator}
+                delay={0.3 + index * 0.1}
+                avatarSize="w-40 h-40"
+              />
+            </div>
           ))}
         </div>
       </div>

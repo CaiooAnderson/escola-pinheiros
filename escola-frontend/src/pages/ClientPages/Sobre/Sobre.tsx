@@ -22,7 +22,6 @@ import diretor2 from "@/assets/diretores/diretor2.png";
 import diretor3 from "@/assets/diretores/diretor3.png";
 import coordenador1 from "@/assets/coordenadores/coordenadora1.png";
 import coordenador2 from "@/assets/coordenadores/coordenadora2.png";
-import coordenador3 from "@/assets/coordenadores/coordenadora3.png";
 import FloatButton from "@/components/global/FloatButton";
 
 const teamMembers = {
@@ -64,12 +63,6 @@ const teamMembers = {
       role: "Coord. Educação Infantil",
       imageUrl: coordenador2,
       fallback: "LG",
-    },
-    {
-      name: "Roberta Lígia",
-      role: "Coord Fundamental I",
-      imageUrl: coordenador3,
-      fallback: "RL",
     },
   ],
 };
