@@ -14,8 +14,8 @@ export default function Hero() {
         <AnimatedSection direction="up" delay={0.2}>
           <p className="text-lg sm:text-xl lg:text-2xl font-secondary text-muted-dark mb-8 max-w-2xl">
             Educação de <span className="font-bold">qualidade</span> e{" "}
-            <span className="font-bold">formação integral</span> para o futuro
-            dos nossos alunos.
+            <span className="font-bold">formação plena</span> para o futuro dos
+            nossos alunos.
           </p>
         </AnimatedSection>
 
