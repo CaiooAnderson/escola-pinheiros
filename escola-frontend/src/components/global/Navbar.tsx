@@ -3,6 +3,8 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu as MenuIcon, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/global/ModeToggle";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import Logo from "@/assets/logo.png";
 
 type NavLink = {
   name: string;
@@ -97,6 +99,12 @@ export default function Navbar({ links }: NavbarProps) {
               {link.name}
             </Link>
           ))}
+
+          <Avatar className="h-12 w-12 mx-2 bg-primary/40 rounded-xl hover:bg-primary-dark/60 transition-all duration-300">
+            <AvatarImage src={Logo} alt="Logo da Escola" />
+            <AvatarFallback>CEP</AvatarFallback>
+          </Avatar>
+
           <ModeToggle />
         </div>
 
@@ -167,6 +175,14 @@ export default function Navbar({ links }: NavbarProps) {
               {link.name}
             </Link>
           ))}
+
+          <div className="flex justify-center my-4">
+            <Avatar className="h-16 w-16 bg-primary/40">
+              <AvatarImage src={Logo} alt="Logo da Escola" />
+              <AvatarFallback>CEP</AvatarFallback>
+            </Avatar>
+          </div>
+
           <div className="flex justify-end">
             <ModeToggle />
           </div>
