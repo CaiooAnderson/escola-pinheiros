@@ -23,6 +23,7 @@ import diretor3 from "@/assets/diretores/diretor3.png";
 import coordenador1 from "@/assets/coordenadores/coordenadora1.png";
 import coordenador2 from "@/assets/coordenadores/coordenadora2.png";
 import FloatButton from "@/components/global/FloatButton";
+import ImageCarousel from "./components/ImageCarousel";
 
 const teamMembers = {
   directors: [
@@ -384,6 +385,10 @@ export default function Sobre() {
               </div>
             </CardContent>
           </Card>
+        </AnimatedSection>
+
+        <AnimatedSection direction="up" delay={0.15}>
+          <ImageCarousel />
         </AnimatedSection>
 
         <AnimatedSection direction="up" delay={0.2}>
