@@ -6,6 +6,34 @@
       "comment": "Estou muito satisfeito com a educação que recebo no Centro Educacional Pinheiros. Os professores são dedicados e a metodologia de ensino é excelente. Notamos uma evolução significativa no desenvolvimento dele.",
       "rating": 5,
       "image": "caio-anderson"
+    },
+    {
+      "id": "2",
+      "name": "Amanda",
+      "comment": "Eu já faço parte da família pinheiros há seis anos e tenho muito orgulho, é sempre uma emoção participar do dia das mães. É muito emocionante, a festa é sempre muito linda. É um orgulho fazer parte daqui. É muita emoção para mim.",
+      "rating": 5,
+      "image": ""
+    },
+    {
+      "id": "3",
+      "name": "Graziele",
+      "comment": "Eu tenho orgulho de participar dessa grande família. É muito confortante esse abraço, esse carinho pelos os meus dois filhos. Eles são muito felizes aqui na escola, gostam muito e eu tenho o prazer de mantê-los aqui. Muito obrigada, Centro Educacional Pinheiros.",
+      "rating": 5,
+      "image": ""
+    },
+    {
+      "id": "4",
+      "name": "Joseane e Reuther",
+      "comment": "Já é o segundo ano do meu filho no Centro Educacional Pinheiros. Viemos através de boas referências que o colégio tem. Gostamos muito da metodologia de ensino que o colégio proporciona. O desenvolvimento que ele teve dentro do colégio ajudou bastante. A estrutura do colégio também conta muito com a adaptação dele, o atendimento, o carinho que ele tem com os funcionários e a direção que nos deixam mais à vontade. A introdução escolar dele foi aqui, e pretendemos deixar ele até concluir o ensino médio aqui no colégio Pinheiros.",
+      "rating": 5,
+      "image": ""
+    },
+    {
+      "id": "5",
+      "name": "Aline Nogueira",
+      "comment": "O pinheiros para mim é uma escola que tenho muito carinho porque é quase uma extensão da minha família. Posso falar com propriedade, porque eu também estudei aqui e aqui é onde eu deixo os bens mais preciosos da minha vida que são os meus filhos. Eu tenho segurança e confiança neles de que eles vão estar bem amparados, vão estar sendo bem cuidados, e aqui eu encontro profissionais com excelência, qualificados com total dedicação ao que fazem. Não existiria nenhuma outra opção de escola que eu pudesse colocar os meus filhos que não fosse aqui. Um dos motivos que eu também escolhi além da educação, que o ensino aqui também é de excelência é o fato do pinheiros estar sempre enfatizando a preparação para os alunos para cursos extras, cursos superiores e faculdade.",
+      "rating": 5,
+      "image": ""
     }
   ]
 }
