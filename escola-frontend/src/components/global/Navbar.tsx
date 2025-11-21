@@ -99,7 +99,7 @@ export default function Navbar({ links }: NavbarProps) {
                 <NavigationMenuItem>
                   <NavigationMenuTrigger
                     className={cn(
-                      "transition-colors duration-200 font-bold whitespace-nowrap text-sm xl:text-base bg-transparent hover:bg-transparent data-[active]:bg-transparent data-[state=open]:bg-primary",
+                      "transition-colors duration-200 cursor-pointer font-bold whitespace-nowrap text-sm xl:text-base bg-transparent hover:bg-transparent data-[active]:bg-transparent data-[state=open]:bg-primary",
                       scrolled || mobileOpen
                         ? "text-muted-dark hover:text-primary"
                         : "text-muted-dark hover:text-primary"
