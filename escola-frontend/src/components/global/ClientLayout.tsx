@@ -5,8 +5,8 @@ import type { ReactNode } from "react";
 const clientLinks: NavLink[] = [
   { name: "Início", path: "/" },
   { name: "Sobre", path: "/sobre" },
-  // { name: "Eventos", path: "/eventos" },
-  { name: "Perguntas Frequentes", path: "/perguntas-frequentes" },
+  { name: "Eventos", path: "/eventos" },
+  // { name: "Perguntas Frequentes", path: "/perguntas-frequentes" },
   { name: "Contato", path: "/contato" },
 ];
 

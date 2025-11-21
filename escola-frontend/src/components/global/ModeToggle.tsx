@@ -29,7 +29,7 @@ export function ModeToggle() {
     <button
       onClick={handleClick}
       aria-label="Alternar tema"
-      className="border cursor-pointer border-primary rounded-md p-1 bg-primary/20 hover:bg-primary text-primary hover:text-white transition-all duration-300 ease-in-out"
+      className="border cursor-pointer border-primary rounded-md p-2 bg-primary/20 hover:bg-primary text-primary hover:text-white transition-all duration-300 ease-in-out"
     >
       {icon}
     </button>
