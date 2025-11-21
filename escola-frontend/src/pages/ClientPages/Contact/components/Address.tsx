@@ -18,7 +18,7 @@ export default function Address() {
 
   return (
     <div className="space-y-6">
-      <AnimatedSection direction="up" delay={0.1}>
+      <AnimatedSection direction="zoom" delay={0.1}>
         <div className="bg-primary-light/10 rounded-xl p-6 shadow-md max-w-lg mx-auto">
           <h3 className="text-xl font-bold font-primary text-primary-dark mb-4 text-center">
             Nossa Localização
@@ -49,8 +49,8 @@ export default function Address() {
         </div>
       </AnimatedSection>
 
-      <AnimatedSection direction="up" delay={0.2}>
-        <div className="bg-primary-light/10 rounded-xl p-6 shadow-md max-w-lg mx-auto flex flex-col gap-3">
+      <div className="bg-primary-light/10 rounded-xl p-6 shadow-md max-w-lg mx-auto flex flex-col gap-3">
+        <AnimatedSection direction="left" delay={0.2}>
           <div
             className="flex items-start gap-3 cursor-pointer text-text hover:text-primary transition-colors"
             onClick={handleOpenMap}
@@ -61,7 +61,9 @@ export default function Address() {
               26297-021
             </span>
           </div>
+        </AnimatedSection>
 
+        <AnimatedSection direction="left" delay={0.3}>
           <div
             className="flex items-start gap-3 cursor-pointer text-text hover:text-primary transition-colors"
             onClick={() => handleCopy("(21) 97168-1314")}
@@ -69,7 +71,9 @@ export default function Address() {
             <Phone className="text-primary-dark w-7 h-7 flex-shrink-0 mt-1" />
             <span className="flex-1 text-lg font-medium">(21) 97168-1314</span>
           </div>
+        </AnimatedSection>
 
+        <AnimatedSection direction="left" delay={0.4}>
           <div
             className="flex items-start gap-3 cursor-pointer text-text hover:text-primary transition-colors"
             onClick={() => handleCopy("pinheirosonline@gmail.com")}
@@ -81,8 +85,8 @@ export default function Address() {
               </span>
             </MarqueeEffect>
           </div>
-        </div>
-      </AnimatedSection>
+        </AnimatedSection>
+      </div>
     </div>
   );
 }
