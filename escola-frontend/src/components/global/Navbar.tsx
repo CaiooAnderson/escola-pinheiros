@@ -108,7 +108,7 @@ export default function Navbar({ links }: NavbarProps) {
                     Preparatório
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <ul className="grid w-[200px] gap-3 p-4">
+                    <ul className="grid w-50 gap-3 p-4">
                       {preparatorioItems.map((item) => (
                         <li key={item.path}>
                           <NavigationMenuLink asChild>
