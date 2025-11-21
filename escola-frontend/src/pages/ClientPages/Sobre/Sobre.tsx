@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import {
   Users,
   GraduationCap,
-  HeartHandshake,
+  Handshake,
   Award,
   Clock,
   Star,
@@ -24,6 +24,7 @@ import coordenador1 from "@/assets/coordenadores/coordenadora1.png";
 import coordenador2 from "@/assets/coordenadores/coordenadora2.png";
 import FloatButton from "@/components/global/FloatButton";
 import ImageCarousel from "./components/ImageCarousel";
+import FAQ from "./components/FAQ";
 
 const teamMembers = {
   directors: [
@@ -107,10 +108,6 @@ const ExpandableParagraph = ({
         className={`text-lg font-secondary text-muted-dark transition-all duration-300 ${
           !isExpanded && needsExpansion ? "line-clamp-4" : ""
         }`}
-        style={{
-          WebkitLineClamp: !isExpanded && needsExpansion ? maxLines : "unset",
-          lineClamp: !isExpanded && needsExpansion ? maxLines : "unset",
-        }}
       >
         {children}
       </p>
@@ -217,37 +214,37 @@ export default function Sobre() {
       icon: <Users className="w-12 h-12 text-primary" />,
       title: "Corpo Docente Qualificado",
       description:
-        "Professores especializados e comprometidos com o desenvolvimento integral dos alunos.",
+        "Professores especializados e comprometidos com o desenvolvimento integral dos alunos. Contamos com uma equipe especializada, formada por diretores, coordenadores, secretaria, equipe de apoio e equipe de limpeza",
     },
     {
       icon: <NotebookPen className="w-12 h-12 text-primary" />,
       title: "Metodologia Inovadora",
       description:
-        "Proposta pedagógica que estimula a curiosidade, criatividade e pensamento crítico.",
+        "Proposta pedagógica que estimula a curiosidade, criatividade e pensamento crítico. Nosso objetivo é enriquecer a experiência lúdica de cada aluno com recursos e espaços especialmente preparados para cada faixa etária, permitindo a interação e o desenvolvimento!",
     },
     {
       icon: <GraduationCap className="w-12 h-12 text-primary" />,
       title: "Formação Completa",
       description:
-        "Preparação acadêmica e humana para os desafios do século XXI.",
+        "Preparação e dependências construidas específicamente para o aluno se preparar para o seu futuro acadêmico e pessoal. Nossa trajetória consiste em eventos, conquistas e realizações que sempre beneficiaram nossos alunos.",
     },
     {
-      icon: <HeartHandshake className="w-12 h-12 text-primary" />,
+      icon: <Handshake className="w-12 h-12 text-primary" />,
       title: "Ambiente Acolhedor",
       description:
-        "Espaço seguro e inclusivo que promove o bem-estar e o desenvolvimento socioemocional.",
+        "A preocupação com o bem estar, conforto e segurança dos alunos e colaboradores é constante. Mostramos um ambiente agradável, cordial, onde cada um ocupe seu espaço com respeito, carinho e prazer em fazer de cada dia um dia especial na vida de cada criança cuidada.",
     },
     {
       icon: <Award className="w-12 h-12 text-primary" />,
       title: "Excelência Educacional",
       description:
-        "Compromisso com a qualidade do ensino e resultados consistentes.",
+        "Compromisso com a qualidade do ensino e resultados consistentes. Buscamos sempre a excelência, por isso contamos com um quadro de colaboradores de alto nível técnico, escolhidos cuidadosamente para prestar sempre o melhor serviço.",
     },
     {
       icon: <Clock className="w-12 h-12 text-primary" />,
       title: "Tradição e Inovação",
       description:
-        "Comprometidos com a evolução constante da educação e formação de valores.",
+        "Comprometidos com a evolução constante da educação e formação de valores. Constantemente buscamos melhorar cuidadosamente os ambientes visando um serviço de excelência",
     },
   ];
 
@@ -309,18 +306,23 @@ export default function Sobre() {
               <div className="grid md:grid-cols-2 gap-8 items-center">
                 <div>
                   <ExpandableParagraph className="mb-4">
-                    O Centro Educacional Pinheiros nasceu do sonho de oferecer
-                    uma educação transformadora na região. Fundada em 1993,
-                    começamos com uma estrutura dedicada e grandes ideias, e
-                    hoje somos uma instituição reconhecida pela qualidade do
-                    nosso ensino.
+                    O Centro Educacional Pinheiros nasceu com o comprometimento
+                    e dedicação em proporcionar uma educação de qualidade e
+                    transparência desde à Educação Infantil até o Ensino Médio.
+                    Somos uma escola viva, desde 1993 desenvolvemos um trabalho
+                    de excelência. Com o compromisso de oferecer um ensino
+                    inovador alicerçado no rigor conceitual. Com mais de 30
+                    anos, acreditamos que a beleza da vida vai além de uma sala
+                    de aula.
                   </ExpandableParagraph>
                   <ExpandableParagraph>
                     Ao longo de {calculateYearsOfExperience()} anos de
                     trajetória, mantemos nosso compromisso com a excelência
                     acadêmica e a formação de valores, sempre adaptando nossa
                     metodologia às necessidades de cada nova geração de
-                    estudantes.
+                    estudantes. Acreditamos que a transparência seja de vital
+                    importância no relacionamento entre responsáveis/alunos e a
+                    escola.
                   </ExpandableParagraph>
                 </div>
 
@@ -399,15 +401,15 @@ export default function Sobre() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {features.map((feature, index) => (
                 <AnimatedSection key={index} direction="up" delay={index * 0.1}>
-                  <Card className="h-full p-6 border-muted-light hover:border-primary transition-all duration-300 hover:shadow-lg group">
+                  <Card className="h-full p-6 border-muted-light hover:border-primary transition-all duration-300 hover:shadow-lg group hover:bg-gradient-to-br hover:from-primary/5 hover:to-primary/10">
                     <CardContent className="flex flex-col items-center text-center gap-4">
-                      <div className="group-hover:scale-110 transition-transform duration-300">
+                      <div className="transform transition-transform duration-500 group-hover:scale-110 group-hover:animate-bounce group-hover:rotate-5">
                         {feature.icon}
                       </div>
-                      <h3 className="text-xl font-semibold font-primary text-primary-dark">
+                      <h3 className="text-xl font-semibold font-primary text-primary-dark transition-colors duration-300 group-hover:text-primary">
                         {feature.title}
                       </h3>
-                      <p className="text-muted-dark font-secondary">
+                      <p className="text-muted-dark font-secondary transition-colors duration-300 group-hover:text-primary-dark">
                         {feature.description}
                       </p>
                     </CardContent>
@@ -426,25 +428,37 @@ export default function Sobre() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {schoolInfo.map((item, index) => (
                 <AnimatedSection key={index} direction="up" delay={index * 0.1}>
-                  <Card className="h-full p-6 bg-primary/5 border-primary/20 hover:bg-primary/10 transition-colors duration-300">
-                    <CardContent className="text-center">
-                      <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Card className="h-full p-6 bg-primary/5 border-primary/20 hover:bg-primary/10 transition-all duration-500 group hover:shadow-xl relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 opacity-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:scale-105" />
+
+                    <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-secondary opacity-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:scale-x-100 scale-x-0 origin-left" />
+
+                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-secondary to-accent opacity-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:scale-x-100 scale-x-0 origin-right" />
+
+                    <CardContent className="text-center transition-all duration-500 group-hover:text-primary-dark relative z-10">
+                      <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4 transform transition-all duration-500 group-hover:scale-110 group-hover:bg-primary/30 group-hover:rotate-6 group-hover:shadow-md">
                         {index === 0 && (
-                          <School className="w-6 h-6 text-primary" />
+                          <School className="w-6 h-6 text-primary transition-transform duration-500 group-hover:scale-110" />
                         )}
                         {index === 1 && (
-                          <Award className="w-6 h-6 text-primary" />
+                          <Award className="w-6 h-6 text-primary transition-transform duration-500 group-hover:scale-110" />
                         )}
                         {index === 2 && (
-                          <Heart className="w-6 h-6 text-primary" />
+                          <Heart className="w-6 h-6 text-primary transition-transform duration-500 group-hover:scale-110" />
                         )}
                       </div>
-                      <h3 className="text-2xl font-bold font-primary text-primary-dark mb-4">
+
+                      <h3 className="text-2xl font-bold font-primary text-primary-dark mb-4 transition-all duration-500 group-hover:text-primary group-hover:scale-105">
                         {item.title}
                       </h3>
-                      <ExpandableParagraph maxLines={4}>
-                        {item.content}
-                      </ExpandableParagraph>
+
+                      <div className="transition-all duration-500 group-hover:translate-y-1">
+                        <ExpandableParagraph maxLines={4}>
+                          {item.content}
+                        </ExpandableParagraph>
+                      </div>
+
+                      <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-primary/50 to-secondary/50 rounded-full opacity-0 group-hover:opacity-70 transition-all duration-500 blur-sm" />
                     </CardContent>
                   </Card>
                 </AnimatedSection>
@@ -455,37 +469,50 @@ export default function Sobre() {
 
         <AnimatedSection direction="up" delay={0.4}>
           <div className="mb-16">
-            <Card className="bg-primary/5 border-primary/20 shadow-xl sm:w-xl w-auto mx-auto">
-              <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <School className="w-8 h-8 text-primary" />
+            <Card className="bg-primary/5 border-primary/20 shadow-xl sm:w-xl w-auto mx-auto transition-all duration-500 hover:shadow-2xl group relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 opacity-0 group-hover:opacity-100 transition-all duration-500" />
+
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-secondary opacity-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:scale-x-100 scale-x-0 origin-left" />
+              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-secondary to-accent opacity-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:scale-x-100 scale-x-0 origin-right" />
+
+              <div className="absolute -top-2 -left-2 w-4 h-4 bg-primary/30 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-700 group-hover:animate-ping" />
+              <div className="absolute -bottom-2 -right-2 w-3 h-3 bg-secondary/30 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-700 group-hover:animate-ping delay-300" />
+
+              <CardContent className="p-8 text-center relative z-10">
+                <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4 transform transition-all duration-500 group-hover:scale-110 group-hover:bg-primary/30 group-hover:rotate-372 group-hover:shadow-lg">
+                  <School className="w-8 h-8 text-primary transition-transform duration-500 group-hover:scale-110" />
                 </div>
-                <h3 className="text-2xl font-bold font-primary text-primary-dark mb-4">
+
+                <h3 className="text-2xl font-bold font-primary text-primary-dark mb-4 transition-all duration-500 group-hover:text-primary group-hover:scale-105">
                   Venha nos Conhecer!
                 </h3>
-                <p className="text-lg font-secondary mb-6 opacity-90">
+
+                <p className="text-lg font-secondary mb-6 opacity-90 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-1">
                   Descubra por que famílias confiam na nossa Escola há mais de{" "}
                   {calculateYearsOfExperience()} anos para oferecer a melhor
                   formação educacional e humana aos seus alunos.
                 </p>
+
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button
                     size="lg"
                     variant="ghost"
-                    className="font-semibold text-foreground border-primary border-1 transition-colors"
+                    className="font-semibold text-foreground border-primary border-1 transition-all duration-500 group-hover:scale-105 group-hover:shadow-md transform"
                     asChild
                   >
                     <Link to="/contato">Agendar Visita</Link>
                   </Button>
-                  {/* <Button
+                  <Button
                     size="lg"
                     variant="ghost"
-                    className="font-semibold text-foreground border-primary border-1 transition-colors"
+                    className="font-semibold text-foreground border-primary border-1 transition-all group-hover:scale-105 group-hover:shadow-md transform duration-500"
                     asChild
                   >
                     <Link to="/eventos">Ver Nossos Eventos</Link>
-                  </Button> */}
+                  </Button>
                 </div>
+
+                <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-24 h-2 bg-gradient-to-r from-primary/40 via-secondary/40 to-accent/40 rounded-full opacity-0 group-hover:opacity-60 transition-all duration-500 blur-sm" />
               </CardContent>
             </Card>
           </div>
@@ -497,7 +524,9 @@ export default function Sobre() {
             coordinators={teamMembers.coordinators}
           />
         </AnimatedSection>
+        <FAQ />
       </div>
+
       <FloatButton />
     </div>
   );

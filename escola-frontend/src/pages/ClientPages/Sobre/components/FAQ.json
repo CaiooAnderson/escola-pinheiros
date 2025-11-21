@@ -1,0 +1,29 @@
+{
+  "faqs": [
+    {
+      "id": "1",
+      "question": "Qual é o horário de funcionamento da escola?",
+      "answer": "Nosso horário de funcionamento é de segunda a sexta-feira, das 7h às 12h e das 13h às 16h."
+    },
+    {
+      "id": "2",
+      "question": "Como é feita a matrícula?",
+      "answer": "A matrícula pode ser realizada presencialmente na secretaria da escola ou através do nosso whatsapp."
+    },
+    {
+      "id": "3",
+      "question": "A escola oferece atividades extracurriculares?",
+      "answer": "Sim! Oferecemos os seguintes cursos: balé, jiujitsu, karatê, natação, vôlei e futsal"
+    },
+    {
+      "id": "4",
+      "question": "Quais são os sistemas de ensino adotados pela escola?",
+      "answer": "Para a Educação infantil adotamos o sistema de ensino Conquista. Para o Ensino Fundamental e Ensino Médio adotamos o sistema de ensino SAE digital."
+    },
+    {
+      "id": "5",
+      "question": "Como é a comunicação com os pais?",
+      "answer": "A comunicação é feita através da agenda do aluno e grupos de turma via WhatsApp"
+    }
+  ]
+}
