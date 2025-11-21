@@ -9,8 +9,8 @@ import ClientLayout from "@/components/global/ClientLayout";
 
 import Home from "@/pages/ClientPages/Home/Home";
 import Sobre from "@/pages/ClientPages/Sobre/Sobre";
-// import Event from "@/pages/ClientPages/Event/Events";
-import FAQ from "@/pages/ClientPages/FAQ/FAQ";
+import Event from "@/pages/ClientPages/Event/Events";
+// import FAQ from "@/pages/ClientPages/FAQ/FAQ";
 import Contact from "@/pages/ClientPages/Contact/Contact";
 
 // import AdminHome from "@/pages/AdminPages/Home/AdminHome";
@@ -55,22 +55,22 @@ export const router = createBrowserRouter([
       </ClientLayout>
     ),
   },
-  // {
-  //   path: "/eventos",
-  //   element: (
-  //     <ClientLayout>
-  //       <Event />
-  //     </ClientLayout>
-  //   ),
-  // },
   {
-    path: "/perguntas-frequentes",
+    path: "/eventos",
     element: (
       <ClientLayout>
-        <FAQ />
+        <Event />
       </ClientLayout>
     ),
   },
+  // {
+  //   path: "/perguntas-frequentes",
+  //   element: (
+  //     <ClientLayout>
+  //       <FAQ />
+  //     </ClientLayout>
+  //   ),
+  // },
   {
     path: "/contato",
     element: (
