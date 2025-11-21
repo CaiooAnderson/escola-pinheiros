@@ -9,7 +9,7 @@ import {
 type ImageItem = { id: string; src: string; alt?: string };
 
 const imagesModules = (import.meta as any).glob(
-  "/src/assets/introducao/*.{jpg,JPG,png,PNG,jpeg,JPEG}",
+  "/src/assets/introducao/*.{jpg,JPG,png,PNG,webp,jpeg,JPEG}",
   { eager: true }
 );
 
@@ -17,13 +17,12 @@ const carouselImages: ImageItem[] = Object.entries(imagesModules)
   .sort(([a], [b]) => a.localeCompare(b, undefined, { numeric: true }))
   .map(([, mod], i) => {
     const src = ((mod as any).default || (mod as any)) as string;
-
     return { id: `intro-${i}`, src } as ImageItem;
   });
 
 export default function IntroCarousel() {
   return (
-    <div className="w-full relative mt-20">
+    <div className="w-full relative pt-20 bg-primary-light/10">
       <Carousel
         className="w-full"
         opts={{
@@ -33,10 +32,11 @@ export default function IntroCarousel() {
         <CarouselContent>
           {carouselImages.map((image) => (
             <CarouselItem key={image.id}>
-              <div className="w-full aspect-[16/9] md:h-[80vh] h-[40vh] bg-background/5 flex items-center justify-center">
+              <div className="w-full flex items-center justify-center bg-background/5">
                 <img
                   src={image.src}
-                  className="sm:h-full w-fit h-60 object-fit sm:w-full"
+                  alt={image.alt || "Imagem de introdução"}
+                  className="w-full h-auto max-h-[80vh] object-contain"
                 />
               </div>
             </CarouselItem>
