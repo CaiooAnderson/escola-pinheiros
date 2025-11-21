@@ -1,9 +1,18 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu as MenuIcon, X } from "lucide-react";
+import { Menu as MenuIcon, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/global/ModeToggle";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
+import { cn } from "@/lib/utils";
 import Logo from "@/assets/logo.png";
 
 type NavLink = {
@@ -18,13 +27,13 @@ type NavbarProps = {
 export default function Navbar({ links }: NavbarProps) {
   const location = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [preparatorioMobileOpen, setPreparatorioMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   const defaultLinks: NavLink[] = [
     { name: "Início", path: "/" },
     { name: "Sobre", path: "/sobre" },
     { name: "Eventos", path: "/eventos" },
-    // { name: "Perguntas Frequentes", path: "/perguntas-frequentes" },
     { name: "Contato", path: "/contato" },
   ];
 
@@ -51,6 +60,17 @@ export default function Navbar({ links }: NavbarProps) {
     window.open(url, "_blank");
   };
 
+  const preparatorioItems = [
+    { name: "P+", path: "/preparatorio/pmais" },
+    { name: "TAF", path: "/preparatorio/taf" },
+    { name: "Aprovados", path: "/preparatorio/aprovados" },
+  ];
+
+  const handleMobileLinkClick = () => {
+    setMobileOpen(false);
+    setPreparatorioMobileOpen(false);
+  };
+
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out ${headerClasses()}`}
@@ -73,6 +93,42 @@ export default function Navbar({ links }: NavbarProps) {
                 {link.name}
               </Link>
             ))}
+
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger
+                    className={cn(
+                      "transition-colors duration-200 font-bold whitespace-nowrap text-sm xl:text-base bg-transparent hover:bg-transparent data-[active]:bg-transparent data-[state=open]:bg-primary",
+                      scrolled || mobileOpen
+                        ? "text-muted-dark hover:text-primary"
+                        : "text-muted-dark hover:text-primary"
+                    )}
+                  >
+                    Preparatório
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[200px] gap-3 p-4">
+                      {preparatorioItems.map((item) => (
+                        <li key={item.path}>
+                          <NavigationMenuLink asChild>
+                            <Link
+                              to={item.path}
+                              className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                              onClick={() => setMobileOpen(false)}
+                            >
+                              <div className="text-sm font-medium leading-none">
+                                {item.name}
+                              </div>
+                            </Link>
+                          </NavigationMenuLink>
+                        </li>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
           </div>
 
           <div className="flex items-center gap-2 mx-4 flex-shrink-0">
@@ -152,20 +208,58 @@ export default function Navbar({ links }: NavbarProps) {
                   ? "text-muted hover:text-primary"
                   : "text-muted hover:text-primary"
               }`}
-              onClick={() => setMobileOpen(false)}
+              onClick={handleMobileLinkClick}
             >
               {link.name}
             </Link>
           ))}
+
+          <div className="px-3 py-2">
+            <button
+              className={`flex items-center justify-between px-0 py-2 rounded-md transition-colors duration-200 font-bold ${
+                preparatorioMobileOpen
+                  ? "text-primary font-semibold"
+                  : "text-muted hover:text-primary"
+              }`}
+              onClick={() => setPreparatorioMobileOpen(!preparatorioMobileOpen)}
+            >
+              <span>Preparatório</span>
+              <ChevronDown
+                className={`h-4 w-4 transition-transform duration-200 ${
+                  preparatorioMobileOpen ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+
+            {preparatorioMobileOpen && (
+              <div className="flex flex-col gap-1 ml-4 mt-2">
+                {preparatorioItems.map((item) => (
+                  <Link
+                    key={item.path}
+                    to={item.path}
+                    className={`block px-3 py-2 rounded-md transition-colors duration-200 ${
+                      location.pathname === item.path
+                        ? "text-primary font-semibold"
+                        : "text-muted hover:text-primary"
+                    }`}
+                    onClick={handleMobileLinkClick}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
 
           <div className="flex flex-wrap gap-2 my-4 justify-center">
             <Button
               variant="default"
               size="sm"
               className="w-3xs"
-              onClick={() =>
-                handlePortalClick("https://pinheiros.alunos.digital/login")
-              }
+              onClick={() => {
+                handleMobileLinkClick();
+                handlePortalClick("https://pinheiros.alunos.digital/login");
+              }}
             >
               Portal do Aluno
             </Button>
@@ -173,9 +267,12 @@ export default function Navbar({ links }: NavbarProps) {
               variant="default"
               size="sm"
               className="w-3xs"
-              onClick={() =>
-                handlePortalClick("https://pinheiros.professores.digital/login")
-              }
+              onClick={() => {
+                handleMobileLinkClick();
+                handlePortalClick(
+                  "https://pinheiros.professores.digital/login"
+                );
+              }}
             >
               Portal do Professor
             </Button>
@@ -183,7 +280,10 @@ export default function Navbar({ links }: NavbarProps) {
               variant="secondary"
               size="sm"
               className="w-3xs"
-              onClick={() => handlePortalClick("https://ava.sae.digital/")}
+              onClick={() => {
+                handleMobileLinkClick();
+                handlePortalClick("https://ava.sae.digital/");
+              }}
             >
               SAE Digital
             </Button>
