@@ -11,7 +11,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Sticker } from "lucide-react";
+import { Smile } from "lucide-react";
 import MarqueeEffect from "@/components/animations/MarqueeEffect";
 
 interface FeedbackItemProps {
@@ -57,7 +57,7 @@ export default function FeedbackItem({
           <Avatar className="w-20 h-20 mb-4">
             <AvatarImage src={feedback.imageUrl} alt={feedback.name} />
             <AvatarFallback className="flex items-center justify-center bg-gray-200">
-              <Sticker className="w-10 h-10 text-gray-400" />
+              <Smile className="w-10 h-10 text-gray-400" />
             </AvatarFallback>
           </Avatar>
 
@@ -91,7 +91,7 @@ export default function FeedbackItem({
                         alt={feedback.name}
                       />
                       <AvatarFallback className="flex items-center justify-center bg-gray-200">
-                        <Sticker className="w-10 h-10 text-gray-400" />
+                        <Smile className="w-10 h-10 text-gray-400" />
                       </AvatarFallback>
                     </Avatar>
                     <DialogTitle className="text-xl font-bold text-center font-primary text-primary-dark line-clamp-1">
