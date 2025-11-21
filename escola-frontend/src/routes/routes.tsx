@@ -22,6 +22,11 @@ import Contact from "@/pages/ClientPages/Contact/Contact";
 import NotFoundPage from "@/pages/NotFound/NotFoundPage";
 // import AdminRoutes from "./AdminRoutes";
 
+// Importando as páginas do preparatório
+import PreparatorioPmais from "@/pages/ClientPages/Preparatorio/Pmais/Pmais";
+import PreparatorioTAF from "@/pages/ClientPages/Preparatorio/TAF/TAF";
+import PreparatorioAprovados from "@/pages/ClientPages/Preparatorio/Aprovados/Aprovados";
+
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -76,6 +81,32 @@ export const router = createBrowserRouter([
     element: (
       <ClientLayout>
         <Contact />
+      </ClientLayout>
+    ),
+  },
+
+  // Rotas do Preparatório
+  {
+    path: "/preparatorio/pmais",
+    element: (
+      <ClientLayout>
+        <PreparatorioPmais />
+      </ClientLayout>
+    ),
+  },
+  {
+    path: "/preparatorio/taf",
+    element: (
+      <ClientLayout>
+        <PreparatorioTAF />
+      </ClientLayout>
+    ),
+  },
+  {
+    path: "/preparatorio/aprovados",
+    element: (
+      <ClientLayout>
+        <PreparatorioAprovados />
       </ClientLayout>
     ),
   },
