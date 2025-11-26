@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
   Dumbbell,
-  Award,
+  // Award,
   TrendingUp,
   Heart,
   Zap,
@@ -54,28 +54,28 @@ export default function PreparatorioTaf() {
     },
   ];
 
-  const methodology = [
-    {
-      title: "Avaliação Inicial",
-      description: "Diagnóstico completo do seu condicionamento físico atual",
-      icon: <Target className="w-6 h-6" />,
-    },
-    {
-      title: "Periodização",
-      description: "Planejamento estratégico para evolução constante e segura",
-      icon: <Calendar className="w-6 h-6" />,
-    },
-    {
-      title: "Treinos Específicos",
-      description: "Exercícios direcionados para cada teste do TAF",
-      icon: <Dumbbell className="w-6 h-6" />,
-    },
-    {
-      title: "Simulados",
-      description: "Testes práticos em condições reais de avaliação",
-      icon: <Award className="w-6 h-6" />,
-    },
-  ];
+  // const methodology = [
+  //   {
+  //     title: "Avaliação Inicial",
+  //     description: "Diagnóstico completo do seu condicionamento físico atual",
+  //     icon: <Target className="w-6 h-6" />,
+  //   },
+  //   {
+  //     title: "Periodização",
+  //     description: "Planejamento estratégico para evolução constante e segura",
+  //     icon: <Calendar className="w-6 h-6" />,
+  //   },
+  //   {
+  //     title: "Treinos Específicos",
+  //     description: "Exercícios direcionados para cada teste do TAF",
+  //     icon: <Dumbbell className="w-6 h-6" />,
+  //   },
+  //   {
+  //     title: "Simulados",
+  //     description: "Testes práticos em condições reais de avaliação",
+  //     icon: <Award className="w-6 h-6" />,
+  //   },
+  // ];
 
   const results = [
     { value: "95%", label: "Taxa de Aprovação" },
@@ -169,7 +169,7 @@ export default function PreparatorioTaf() {
       </section>
 
       <section className="py-16 bg-card">
-        <div className="container mx-auto px-4">
+        {/* <div className="container mx-auto px-4">
           <AnimatedSection direction="up">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -201,7 +201,7 @@ export default function PreparatorioTaf() {
               </AnimatedSection>
             ))}
           </div>
-        </div>
+        </div> */}
       </section>
 
       <section className="py-16">

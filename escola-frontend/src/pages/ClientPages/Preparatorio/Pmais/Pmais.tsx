@@ -66,36 +66,36 @@ export default function PreparatorioPmais() {
     },
   ];
 
-  const courses = [
-    {
-      name: "ESA",
-      description: "Escola de Sargentos das Armas",
-      color: "bg-primary/20 border-primary",
-      whatsappMessage:
-        "Olá! Gostaria de me inscrever no curso ESA (Escola de Sargentos das Armas) do Preparatório P+.",
-    },
-    {
-      name: "PRF",
-      description: "Polícia Rodoviária Federal",
-      color: "bg-secondary/20 border-secondary",
-      whatsappMessage:
-        "Olá! Gostaria de me inscrever no curso PRF (Polícia Rodoviária Federal) do Preparatório P+.",
-    },
-    {
-      name: "PF/PC",
-      description: "Polícia Federal e Civil",
-      color: "bg-success/20 border-success",
-      whatsappMessage:
-        "Olá! Gostaria de me inscrever no curso PF/PC (Polícia Federal e Civil) do Preparatório P+.",
-    },
-    {
-      name: "Outros",
-      description: "Demais cargos de segurança",
-      color: "bg-info/20 border-info",
-      whatsappMessage:
-        "Olá! Gostaria de me inscrever em outros cursos do Preparatório P+ e gostaria de mais informações.",
-    },
-  ];
+  // const courses = [
+  //   {
+  //     name: "ESA",
+  //     description: "Escola de Sargentos das Armas",
+  //     color: "bg-primary/20 border-primary",
+  //     whatsappMessage:
+  //       "Olá! Gostaria de me inscrever no curso ESA (Escola de Sargentos das Armas) do Preparatório P+.",
+  //   },
+  //   {
+  //     name: "PRF",
+  //     description: "Polícia Rodoviária Federal",
+  //     color: "bg-secondary/20 border-secondary",
+  //     whatsappMessage:
+  //       "Olá! Gostaria de me inscrever no curso PRF (Polícia Rodoviária Federal) do Preparatório P+.",
+  //   },
+  //   {
+  //     name: "PF/PC",
+  //     description: "Polícia Federal e Civil",
+  //     color: "bg-success/20 border-success",
+  //     whatsappMessage:
+  //       "Olá! Gostaria de me inscrever no curso PF/PC (Polícia Federal e Civil) do Preparatório P+.",
+  //   },
+  //   {
+  //     name: "Outros",
+  //     description: "Demais cargos de segurança",
+  //     color: "bg-info/20 border-info",
+  //     whatsappMessage:
+  //       "Olá! Gostaria de me inscrever em outros cursos do Preparatório P+ e gostaria de mais informações.",
+  //   },
+  // ];
 
   const openWhatsApp = (message: string) => {
     const phoneNumber = "5521971681314";
@@ -116,9 +116,9 @@ export default function PreparatorioPmais() {
     openWhatsApp(message);
   };
 
-  const handleInscreverCurso = (courseMessage: string) => {
-    openWhatsApp(courseMessage);
-  };
+  // const handleInscreverCurso = (courseMessage: string) => {
+  //   openWhatsApp(courseMessage);
+  // };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
@@ -193,7 +193,7 @@ export default function PreparatorioPmais() {
       </section>
 
       <section className="py-16 bg-card group">
-        <div className="container mx-auto px-4">
+        {/* <div className="container mx-auto px-4">
           <AnimatedSection direction="up">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -240,7 +240,7 @@ export default function PreparatorioPmais() {
               </AnimatedSection>
             ))}
           </div>
-        </div>
+        </div> */}
       </section>
 
       <section className="py-16">
