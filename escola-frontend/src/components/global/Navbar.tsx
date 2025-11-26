@@ -191,7 +191,7 @@ export default function Navbar({ links }: NavbarProps) {
 
       {mobileOpen && (
         <div
-          className={`lg:hidden flex flex-col gap-1 px-4 pb-4 transition-all duration-200 ${
+          className={`lg:hidden flex flex-col gap-1 px-4 pb-4 transition-all duration-200 max-h-screen overflow-y-auto ${
             scrolled ? "bg-card/80 shadow-md" : "bg-card shadow-md"
           }`}
         >
@@ -296,7 +296,7 @@ export default function Navbar({ links }: NavbarProps) {
             </Avatar>
           </div>
 
-          <div className="flex justify-center">
+          <div className="flex justify-center pb-12">
             <ModeToggle />
           </div>
         </div>
