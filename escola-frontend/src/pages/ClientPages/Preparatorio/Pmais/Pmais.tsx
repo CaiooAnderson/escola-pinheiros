@@ -66,36 +66,36 @@ export default function PreparatorioPmais() {
     },
   ];
 
-  // const courses = [
-  //   {
-  //     name: "ESA",
-  //     description: "Escola de Sargentos das Armas",
-  //     color: "bg-primary/20 border-primary",
-  //     whatsappMessage:
-  //       "Olá! Gostaria de me inscrever no curso ESA (Escola de Sargentos das Armas) do Preparatório P+.",
-  //   },
-  //   {
-  //     name: "PRF",
-  //     description: "Polícia Rodoviária Federal",
-  //     color: "bg-secondary/20 border-secondary",
-  //     whatsappMessage:
-  //       "Olá! Gostaria de me inscrever no curso PRF (Polícia Rodoviária Federal) do Preparatório P+.",
-  //   },
-  //   {
-  //     name: "PF/PC",
-  //     description: "Polícia Federal e Civil",
-  //     color: "bg-success/20 border-success",
-  //     whatsappMessage:
-  //       "Olá! Gostaria de me inscrever no curso PF/PC (Polícia Federal e Civil) do Preparatório P+.",
-  //   },
-  //   {
-  //     name: "Outros",
-  //     description: "Demais cargos de segurança",
-  //     color: "bg-info/20 border-info",
-  //     whatsappMessage:
-  //       "Olá! Gostaria de me inscrever em outros cursos do Preparatório P+ e gostaria de mais informações.",
-  //   },
-  // ];
+  const courses = [
+    {
+      name: "ESA",
+      description: "Escola de Sargentos das Armas",
+      color: "bg-primary/20 border-primary",
+      whatsappMessage:
+        "Olá! Gostaria de me inscrever no curso ESA (Escola de Sargentos das Armas) do Preparatório P+.",
+    },
+    {
+      name: "EEAR",
+      description: "Escola de Especialistas de Aeronáutica",
+      color: "bg-info/20 border-info",
+      whatsappMessage:
+        "Olá! Gostaria de me inscrever no curso EEAR (Escola de Especialistas de Aeronáutica) do Preparatório P+.",
+    },
+    {
+      name: "PF/PC",
+      description: "Polícia Federal e Civil",
+      color: "bg-success/20 border-success",
+      whatsappMessage:
+        "Olá! Gostaria de me inscrever no curso PF/PC (Polícia Federal e Civil) do Preparatório P+.",
+    },
+    {
+      name: "Outros",
+      description: "Demais cargos de segurança",
+      color: "bg-info/20 border-info",
+      whatsappMessage:
+        "Olá! Gostaria de me inscrever em outros cursos do Preparatório P+ e gostaria de mais informações.",
+    },
+  ];
 
   const openWhatsApp = (message: string) => {
     const phoneNumber = "5521971681314";
@@ -116,13 +116,13 @@ export default function PreparatorioPmais() {
     openWhatsApp(message);
   };
 
-  // const handleInscreverCurso = (courseMessage: string) => {
-  //   openWhatsApp(courseMessage);
-  // };
+  const handleInscreverCurso = (courseMessage: string) => {
+    openWhatsApp(courseMessage);
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
-      <section className="relative py-30 bg-gradient-to-r from-primary/10 via-primary/5 to-secondary/10">
+      <section className="relative py-30 bg-gradient-to-bl from-primary/20 via-primary/5 to-secondary/5">
         <div className="container mx-auto px-4">
           <AnimatedSection direction="up" animateOnMount>
             <div className="text-center max-w-4xl mx-auto">
@@ -154,7 +154,7 @@ export default function PreparatorioPmais() {
         </div>
       </section>
 
-      <section className="py-16">
+      <section className="py-16 bg-gradient-to-br from-primary/5 via-background to-secondary/5 transition-all duration-500 ease-in-out">
         <div className="container mx-auto px-4">
           <AnimatedSection direction="up">
             <div className="text-center mb-12">
@@ -171,8 +171,8 @@ export default function PreparatorioPmais() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {features.map((feature, index) => (
               <AnimatedSection key={index} direction="up" delay={index * 0.1}>
-                <Card className="group hover:shadow-lg transition-all duration-300 border-2 border-muted-light/50 hover:border-primary/50 h-full">
-                  <CardContent className="p-6 text-center rounded-lg bg-gradient-to-b from-background/50 to-muted-light/20 group-hover:from-primary/10 group-hover:to-secondary/10 transition-colors duration-300 h-full flex flex-col items-center">
+                <Card className="group shadow-md hover:shadow-lg transition-all duration-300 border-2 border-primary/50 hover:border-primary/50 h-full">
+                  <CardContent className="p-6 text-center rounded-lg bg-gradient-to-b from-primary/20 to-muted-light/5 group-hover:from-primary-dark/20 group-hover:to-secondary/20 transition-colors duration-300 h-full flex flex-col items-center">
                     <div
                       className={`w-10 h-10 ${feature.color} bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:rotate-10 transition-transform`}
                     >
@@ -192,8 +192,8 @@ export default function PreparatorioPmais() {
         </div>
       </section>
 
-      <section className="py-16 bg-card group">
-        {/* <div className="container mx-auto px-4">
+      <section className="py-16 bg-gradient-to-tr from-success/5 via-background to-primary/5">
+        <div className="container mx-auto px-4">
           <AnimatedSection direction="up">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -210,10 +210,10 @@ export default function PreparatorioPmais() {
             {courses.map((course, index) => (
               <AnimatedSection key={index} direction="up" delay={index * 0.1}>
                 <Card
-                  className={`border-2 ${course.color} hover:shadow-lg transition-all duration-300 h-full flex flex-col`}
+                  className={`border-2 ${course.color} hover:shadow-lg transition-all duration-300 h-full flex flex-col group`}
                 >
                   <CardContent className="p-6 text-center flex flex-col flex-grow">
-                    <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 group-hover:animate-bounce transition-transform shadow-md">
+                    <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 animate-bounce transition-transform shadow-md">
                       <ShieldCheck
                         className={`w-8 h-8 ${course.color
                           .replace("bg-", "text-")
@@ -240,13 +240,13 @@ export default function PreparatorioPmais() {
               </AnimatedSection>
             ))}
           </div>
-        </div> */}
+        </div>
       </section>
 
-      <section className="py-16">
+      <section className="py-16 bg-gradient-to-br from-primary/5 via-background to-secondary/5 transition-all duration-500 ease-in-out">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <AnimatedSection direction="left">
+            <AnimatedSection direction="zoom">
               <Card className="bg-gradient-to-br from-primary/10 to-secondary/10 border-2 border-primary/20 overflow-hidden group hover:shadow-xl transition-all duration-300 group">
                 <CardContent className="p-0">
                   <div className="relative h-full min-h-[400px] w-full">
@@ -345,7 +345,7 @@ export default function PreparatorioPmais() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="font-semibold text-lg px-8 py-3 bg-background shadow-lg shadow-background"
+                  className="font-semibold text-lg px-8 py-3 bg-background hover:shadow-md shadow-background border hover:border-background"
                   onClick={handleEntrarContato}
                 >
                   <CalendarPlus className="w-5 h-5 mr-2" />

@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
   Dumbbell,
-  // Award,
+  Award,
   TrendingUp,
   Heart,
   Zap,
@@ -17,65 +17,68 @@ import {
 export default function PreparatorioTaf() {
   const tests = [
     {
-      name: "Corrida de 12min",
+      name: "Corrida",
       description:
         "Teste de capacidade cardiorrespiratória e resistência aeróbica",
-      standard: "Mínimo 2.400m (masculino) / 2.000m (feminino)",
+      standard: "Trote, Pique, Caminhada ou Corrida",
       icon: <Zap className="w-5 h-5" />,
       color: "text-primary",
     },
     {
       name: "Barra Fixa",
       description: "Teste de força muscular dos membros superiores",
-      standard: "Mínimo 5 repetições (masculino) / 3 repetições (feminino)",
+      standard: "Isometria ou Barra Fixa",
       icon: <Dumbbell className="w-5 h-5" />,
       color: "text-secondary",
     },
     {
       name: "Flexão de Braço",
       description: "Teste de resistência muscular localizada",
-      standard: "Mínimo 20 repetições (masculino) / 15 repetições (feminino)",
+      standard: "Flexão com joelhos apoiados, Flexão inclinada ou Flexão tradicional",
       icon: <Target className="w-5 h-5" />,
       color: "text-success",
     },
     {
       name: "Abdominal",
       description: "Teste de resistência muscular abdominal",
-      standard: "Mínimo 30 repetições (masculino) / 25 repetições (feminino)",
+      standard: "Supra ou Remador",
       icon: <Heart className="w-5 h-5" />,
       color: "text-info",
     },
     {
-      name: "Natação 50m",
+      name: "Natação",
       description: "Teste de habilidade aquática e resistência",
-      standard: "Máximo 60 segundos (ambos os sexos)",
+      standard: "Nado Crawl, Peito, Borboleta, Costas ou Apnéia",
       icon: <TrendingUp className="w-5 h-5" />,
       color: "text-warning",
     },
   ];
 
-  // const methodology = [
-  //   {
-  //     title: "Avaliação Inicial",
-  //     description: "Diagnóstico completo do seu condicionamento físico atual",
-  //     icon: <Target className="w-6 h-6" />,
-  //   },
-  //   {
-  //     title: "Periodização",
-  //     description: "Planejamento estratégico para evolução constante e segura",
-  //     icon: <Calendar className="w-6 h-6" />,
-  //   },
-  //   {
-  //     title: "Treinos Específicos",
-  //     description: "Exercícios direcionados para cada teste do TAF",
-  //     icon: <Dumbbell className="w-6 h-6" />,
-  //   },
-  //   {
-  //     title: "Simulados",
-  //     description: "Testes práticos em condições reais de avaliação",
-  //     icon: <Award className="w-6 h-6" />,
-  //   },
-  // ];
+  const methodology = [
+    {
+      title: "Avaliação Inicial",
+      description:
+        "Diagnóstico completo do seu condicionamento físico atual para criar um plano personalizado",
+      icon: <Target className="w-6 h-6" />,
+    },
+    {
+      title: "Periodização",
+      description:
+        "Planejamento estratégico dividido em fases para evolução constante e segura",
+      icon: <Calendar className="w-6 h-6" />,
+    },
+    {
+      title: "Treinos Específicos",
+      description:
+        "Exercícios direcionados especificamente para cada teste do TAF",
+      icon: <Dumbbell className="w-6 h-6" />,
+    },
+    {
+      title: "Simulados Periódicos",
+      description: "Testes práticos regulares em condições reais de avaliação",
+      icon: <Award className="w-6 h-6" />,
+    },
+  ];
 
   const results = [
     { value: "95%", label: "Taxa de Aprovação" },
@@ -86,7 +89,7 @@ export default function PreparatorioTaf() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
-      <section className="relative py-20 bg-gradient-to-r from-secondary/10 via-primary/5 to-success/10">
+      <section className="relative py-30 bg-gradient-to-br from-secondary/20 via-secondary/5 to-primary/5">
         <div className="container mx-auto px-4">
           <AnimatedSection direction="up" animateOnMount>
             <div className="text-center max-w-4xl mx-auto">
@@ -124,7 +127,7 @@ export default function PreparatorioTaf() {
         </div>
       </section>
 
-      <section className="py-16">
+      <section className="py-16 bg-gradient-to-br from-primary/5 via-background to-secondary/5 transition-all duration-500 ease-in-out">
         <div className="container mx-auto px-4">
           <AnimatedSection direction="up">
             <div className="text-center mb-12">
@@ -141,8 +144,8 @@ export default function PreparatorioTaf() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {tests.map((test, index) => (
               <AnimatedSection key={index} direction="up" delay={index * 0.1}>
-                <Card className="group hover:shadow-lg transition-all duration-300 border-2 hover:border-primary/50 h-full">
-                  <CardContent className="p-6">
+                <Card className="group hover:shadow-lg transition-all duration-300 hover:border-primary/50 h-full flex flex-col">
+                  <CardContent className="p-6 flex flex-col flex-1">
                     <div
                       className={`w-12 h-12 ${test.color} bg-opacity-20 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}
                     >
@@ -151,12 +154,12 @@ export default function PreparatorioTaf() {
                     <h3 className="font-bold text-lg mb-2 text-foreground">
                       {test.name}
                     </h3>
-                    <p className="text-muted-foreground text-sm mb-3">
+                    <p className="text-muted-foreground text-sm mb-3 flex-1">
                       {test.description}
                     </p>
                     <Badge
                       variant="outline"
-                      className={`${test.color} border-current`}
+                      className={`${test.color} border-current w-fit`}
                     >
                       {test.standard}
                     </Badge>
@@ -168,16 +171,16 @@ export default function PreparatorioTaf() {
         </div>
       </section>
 
-      <section className="py-16 bg-card">
-        {/* <div className="container mx-auto px-4">
+      <section className="py-16 bg-gradient-to-tr from-success/5 via-background to-primary/5">
+        <div className="container mx-auto px-4">
           <AnimatedSection direction="up">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                 Nossa <span className="text-secondary">Metodologia</span>
               </h2>
-              <p className="text-lg text-muted-foreground">
-                Processo estruturado para garantir sua evolução física com
-                segurança
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Processo estruturado em 4 pilares para garantir sua evolução
+                física com segurança e eficiência
               </p>
             </div>
           </AnimatedSection>
@@ -185,29 +188,36 @@ export default function PreparatorioTaf() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {methodology.map((item, index) => (
               <AnimatedSection key={index} direction="up" delay={index * 0.1}>
-                <Card className="border-2 border-muted hover:border-secondary/50 hover:shadow-lg transition-all duration-300 group">
-                  <CardContent className="p-6 text-center">
-                    <div className="w-14 h-14 bg-secondary/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                      <div className="text-secondary">{item.icon}</div>
+                <Card className="border-2 border-muted hover:border-secondary/50 hover:shadow-lg transition-all duration-300 group h-full flex flex-col">
+                  <CardContent className="p-6 text-center flex flex-col flex-1">
+                    <div className="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:bg-secondary/30 transition-all duration-300">
+                      <div className="text-secondary group-hover:scale-110 transition-transform">
+                        {item.icon}
+                      </div>
                     </div>
-                    <h3 className="font-bold text-lg mb-2 text-foreground">
+                    <h3 className="font-bold text-lg mb-3 text-foreground group-hover:text-secondary transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-muted-foreground text-sm">
+                    <p className="text-muted-foreground text-sm leading-relaxed flex-1">
                       {item.description}
                     </p>
+                    <div className="mt-4 pt-4 border-t border-muted/50">
+                      <span className="text-xs font-semibold text-secondary">
+                        Etapa {index + 1}
+                      </span>
+                    </div>
                   </CardContent>
                 </Card>
               </AnimatedSection>
             ))}
           </div>
-        </div> */}
+        </div>
       </section>
 
-      <section className="py-16">
+      <section className="py-16 bg-gradient-to-br from-primary/5 via-background to-secondary/5 transition-all duration-500 ease-in-out">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <AnimatedSection direction="left">
+            <AnimatedSection direction="right">
               <div>
                 <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
                   Resultados que <span className="text-success">Inspiram</span>
@@ -234,7 +244,7 @@ export default function PreparatorioTaf() {
                   {results.map((result, index) => (
                     <div
                       key={index}
-                      className="text-center p-4 bg-primary/10 rounded-lg"
+                      className="text-center p-4 bg-primary/10 rounded-lg hover:bg-primary/15 transition-colors"
                     >
                       <div className="text-2xl font-bold text-primary mb-1">
                         {result.value}
@@ -249,7 +259,7 @@ export default function PreparatorioTaf() {
             </AnimatedSection>
 
             <AnimatedSection direction="right">
-              <Card className="bg-gradient-to-br from-secondary/10 to-primary/10 border-2 border-secondary/20">
+              <Card className="bg-gradient-to-br from-secondary/10 to-primary/10 border-2 border-secondary/20 hover:border-secondary/40 transition-all duration-300">
                 <CardContent className="p-8">
                   <div className="text-center mb-6">
                     <Users className="w-16 h-16 text-secondary mx-auto mb-4" />
@@ -270,11 +280,14 @@ export default function PreparatorioTaf() {
                       "Suporte psicológico",
                       "Grupo de estudos exclusivo",
                     ].map((advantage, index) => (
-                      <div key={index} className="flex items-center gap-3">
-                        <div className="w-6 h-6 bg-success/20 rounded-full flex items-center justify-center">
+                      <div
+                        key={index}
+                        className="flex items-center gap-3 group"
+                      >
+                        <div className="w-6 h-6 bg-success/20 rounded-full flex items-center justify-center group-hover:bg-success/30 transition-colors">
                           <CheckCircle className="w-3 h-3 text-success" />
                         </div>
-                        <span className="text-foreground font-medium text-sm">
+                        <span className="text-foreground font-medium text-sm group-hover:text-success transition-colors">
                           {advantage}
                         </span>
                       </div>
@@ -292,7 +305,7 @@ export default function PreparatorioTaf() {
           <AnimatedSection direction="up">
             <div className="text-center text-primary-foreground max-w-3xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Prepare-se para o <span className="text-white">Sucesso</span>
+                Prepare-se para o <span className="text-text">Sucesso</span>
               </h2>
               <p className="text-xl mb-8 opacity-90">
                 Agende sua avaliação física e descubra como podemos transformar
@@ -302,7 +315,7 @@ export default function PreparatorioTaf() {
                 <Button
                   size="lg"
                   variant="outlineSecondary"
-                  className="font-semibold text-lg px-8 py-3 bg-background shadow-lg shadow-background"
+                  className="font-semibold text-lg px-8 py-3 bg-background hover:shadow-md shadow-background border hover:border-background"
                 >
                   <Calendar className="w-5 h-5 mr-2" />
                   Agendar Avaliação
