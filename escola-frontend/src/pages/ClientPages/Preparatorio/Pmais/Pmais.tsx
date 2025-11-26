@@ -142,7 +142,7 @@ export default function PreparatorioPmais() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="font-semibold text-lg px-8 py-3 bg-background"
+                  className="font-semibold text-lg px-8 py-3 bg-background drop-shadow-lg shadow-background/40"
                   onClick={handleAgendarAvaliacao}
                 >
                   <CalendarPlus className="w-5 h-5 mr-2" />
@@ -330,7 +330,7 @@ export default function PreparatorioPmais() {
         </div>
       </section>
 
-      <section className="py-16 bg-gradient-to-t from-primary/70 to-primary-light/50">
+      <section className="py-16 bg-gradient-to-t from-primary/70 to-primary-dark">
         <div className="container mx-auto px-4">
           <AnimatedSection direction="up">
             <div className="text-center text-primary-foreground max-w-3xl mx-auto">
@@ -345,7 +345,7 @@ export default function PreparatorioPmais() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="font-semibold text-lg px-8 py-3 border-border!! border-2"
+                  className="font-semibold text-lg px-8 py-3 bg-background shadow-lg shadow-background"
                   onClick={handleEntrarContato}
                 >
                   <CalendarPlus className="w-5 h-5 mr-2" />

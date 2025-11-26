@@ -114,7 +114,7 @@ export default function PreparatorioTaf() {
                 <Button
                   variant="outlineSecondary"
                   size="lg"
-                  className="font-semibold text-lg px-8 py-3"
+                  className="font-semibold text-lg px-8 py-3 bg-background"
                 >
                   Conheça o Método
                 </Button>
@@ -287,7 +287,7 @@ export default function PreparatorioTaf() {
         </div>
       </section>
 
-      <section className="py-16 bg-gradient-to-t from-secondary to-secondary-dark">
+      <section className="py-16 bg-gradient-to-t from-secondary/70 to-secondary-dark">
         <div className="container mx-auto px-4">
           <AnimatedSection direction="up">
             <div className="text-center text-primary-foreground max-w-3xl mx-auto">
@@ -302,7 +302,7 @@ export default function PreparatorioTaf() {
                 <Button
                   size="lg"
                   variant="outlineSecondary"
-                  className="font-semibold text-lg px-8 py-3 border-border!! border-2"
+                  className="font-semibold text-lg px-8 py-3 bg-background shadow-lg shadow-background"
                 >
                   <Calendar className="w-5 h-5 mr-2" />
                   Agendar Avaliação
