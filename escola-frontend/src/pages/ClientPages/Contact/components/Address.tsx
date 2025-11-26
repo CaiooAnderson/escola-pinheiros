@@ -18,7 +18,7 @@ export default function Address() {
 
   return (
     <div className="space-y-6">
-      <AnimatedSection direction="zoom" delay={0.1}>
+      <AnimatedSection direction="scale" delay={0.1}>
         <div className="bg-primary-light/10 rounded-xl p-6 shadow-md max-w-lg mx-auto">
           <h3 className="text-xl font-bold font-primary text-primary-dark mb-4 text-center">
             Nossa Localização

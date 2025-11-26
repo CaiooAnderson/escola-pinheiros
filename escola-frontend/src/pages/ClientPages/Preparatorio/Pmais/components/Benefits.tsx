@@ -35,8 +35,7 @@ export default function Benefits() {
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-stretch">
           {" "}
-          {/* Mudado para items-stretch */}
-          <AnimatedSection direction="zoom">
+          <AnimatedSection direction="scale">
             <Card className="bg-gradient-to-br from-primary/10 to-secondary/10 border-2 border-primary/20 overflow-hidden group hover:shadow-xl transition-all duration-300 h-full">
               <CardContent className="p-0 h-full">
                 <div className="relative w-full h-full">
