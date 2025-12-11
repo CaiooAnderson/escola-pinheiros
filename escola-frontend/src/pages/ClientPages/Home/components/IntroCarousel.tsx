@@ -33,11 +33,11 @@ export default function IntroCarousel() {
           {carouselImages.map((image) => (
             <CarouselItem key={image.id}>
               <div className="w-full flex items-center justify-center bg-background/5 p-4 sm:p-6 lg:p-8">
-                <div className="w-full max-w-4xl xl:max-w-5xl 2xl:max-w-6xl">
+                <div className="w-full max-w-4xl xl:max-w-5xl 2xl:max-w-7xl">
                   <img
                     src={image.src}
                     alt={image.alt || "Imagem de introdução"}
-                    className="w-full h-auto object-contain rounded-lg shadow-lg max-h-[50vh] sm:max-h-[55vh] md:max-h-[60vh] lg:max-h-[65vh] xl:max-h-[70vh]"
+                    className="w-full h-auto object-fill rounded-lg shadow-lg max-h-[50vh] sm:max-h-[55vh] md:max-h-[60vh] lg:max-h-[65vh] 2xl:max-h-[75vh]"
                   />
                 </div>
               </div>
