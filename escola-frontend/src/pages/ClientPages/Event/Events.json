@@ -1,3 +1,54 @@
 {
-  "events": []
+  "events": [
+    {
+      "id": "evento-1",
+      "name": "Infantil",
+      "eventAt": "01/02/2026",
+      "imageUrl": "evento-1.jpeg",
+      "photosLink": "https://www.instagram.com/stories/highlights/17976474002146843/",
+      "description": "Abertura de matrículas para turmas do Infantil. Garanta a vaga do seu filho em um ambiente acolhedor, com propostas pedagógicas inovadoras e equipe qualificada. Entre em contato para mais informações sobre horários, documentação necessária e processo de inscrição.",
+      "categories": [
+        {
+          "name": "Matrículas"
+        }
+      ]
+    },
+    {
+      "id": "evento-2",
+      "name": "Ensino Fundamental",
+      "eventAt": "22/11/2024",
+      "imageUrl": "evento-2.jpg",
+      "photosLink": "https://www.instagram.com/stories/highlights/17983801568424996/",
+      "description": "Hackathon de 48 horas focado em soluções tecnológicas para sustentabilidade ambiental. Participantes desenvolveram protótipos para problemas reais de gestão de resíduos, energia renovável e conservação de recursos hídricos. O evento premiou as três melhores soluções com mentoria e apoio para implementação.",
+      "categories": [
+        {
+          "name": "Matrículas"
+        }
+      ]
+    },
+    {
+      "id": "evento-3",
+      "name": "Ensino Médio",
+      "eventAt": "22/11/2024",
+      "imageUrl": "evento-3.jpeg",
+      "photosLink": "https://www.instagram.com/stories/highlights/17849176328678834/",
+      "categories": [
+        {
+          "name": "Matrículas"
+        }
+      ]
+    },
+    {
+      "id": "evento-4",
+      "name": "Ensino P+",
+      "eventAt": "22/11/2024",
+      "imageUrl": "evento-4.jpeg",
+      "description": "Preparação 100% direcionada para o conteúdo programático do seu concurso, professores especialistas, material exclusivo e suporte contínuo para resolver suas questões em tempo real!",
+      "categories": [
+        {
+          "name": "Projeto P+"
+        }
+      ]
+    }
+  ]
 }

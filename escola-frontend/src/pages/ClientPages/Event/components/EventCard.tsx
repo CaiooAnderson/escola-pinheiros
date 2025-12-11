@@ -35,8 +35,8 @@ export default function EventCard({ event, index }: EventCardProps) {
                 alt={event.name}
                 className="w-full h-full object-cover rounded"
               />
-              <div className="absolute inset-0 rounded-md bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center">
-                <span className="text-white font-semibold text-center p-2 overflow-hidden text-ellipsis whitespace-nowrap">
+              <div className="absolute inset-0 rounded-md bg-gradient-to-b from-black/60 from-60% to-card/20 flex items-start justify-center">
+                <span className="text-white font-semibold text-center p-4 overflow-hidden text-ellipsis whitespace-nowrap">
                   {event.name}
                 </span>
               </div>
