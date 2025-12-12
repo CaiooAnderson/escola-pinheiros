@@ -26,7 +26,7 @@ export default function EventCard({ event, index }: EventCardProps) {
       <AnimatedSection direction="up" delay={index * 0.1}>
         <CarouselItem className="snap-start w-37.5 flex-none">
           <Card
-            className="cursor-pointer w-37.5 h-37.5"
+            className="cursor-pointer w-37.5 h-37.5 hover:scale-95"
             onClick={() => setIsModalOpen(true)}
           >
             <CardContent className="p-0 w-full h-full relative">
@@ -35,7 +35,7 @@ export default function EventCard({ event, index }: EventCardProps) {
                 alt={event.name}
                 className="w-full h-full object-cover rounded"
               />
-              <div className="absolute inset-0 rounded-md bg-gradient-to-b from-black/60 from-60% to-card/20 flex items-start justify-center">
+              <div className="absolute inset-0 rounded-md bg-gradient-to-b from-black/70 from-60% to-card/20 flex items-start justify-center">
                 <span className="text-white font-semibold text-center p-4 overflow-hidden text-ellipsis whitespace-nowrap">
                   {event.name}
                 </span>

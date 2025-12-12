@@ -56,23 +56,13 @@ export default function EventModal({
       <Dialog open={isOpen} onOpenChange={onClose}>
         <DialogContent className="max-w-lg rounded-2xl p-6 shadow-primary-dark bg-background">
           <DialogHeader className="space-y-3">
-            <div className="relative overflow-hidden">
-              <DialogTitle className="text-center sm:text-left">
-                <div className="flex justify-center sm:justify-start items-center gap-2">
-                  <div className="relative overflow-hidden">
-                    <MarqueeEffect className="text-2xl font-bold text-primary-dark font-primary">
-                      {event.name}
-                    </MarqueeEffect>
-                    {event.name.length > 30 && (
-                      <>
-                        <div className="absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-background to-transparent pointer-events-none" />
-                        <div className="absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-background to-transparent pointer-events-none" />
-                      </>
-                    )}
-                  </div>
-                </div>
-              </DialogTitle>
-            </div>
+            <DialogTitle className="text-center sm:text-left">
+              <div className="flex justify-center sm:justify-start items-center gap-2">
+                <MarqueeEffect className="text-2xl font-bold text-primary-dark font-primary sm:max-w-112 max-w-60">
+                  {event.name}
+                </MarqueeEffect>
+              </div>
+            </DialogTitle>
 
             <div className="space-y-2.5 pt-2">
               <DialogDescription className="sr-only">
@@ -133,7 +123,7 @@ export default function EventModal({
                   }`}
                   onClick={handlePhotosClick}
                 >
-                  <Image className="w-5 h-5 group-hover:rotate-12 group-hover:scale-110 transition-all duration-300" />
+                  <Image className="w-5 h-5 group-hover:rotate-360 group-hover:scale-110 transition-all duration-300" />
                   <span className="group-hover:tracking-wide transition-all duration-300">
                     Ver Foto(s)
                   </span>
@@ -150,7 +140,7 @@ export default function EventModal({
                   }`}
                   onClick={handleInfoClick}
                 >
-                  <Info className="w-5 h-5 group-hover:animate-pulse transition-all duration-300" />
+                  <Info className="w-5 h-5 group-hover:animate-bounce transition-all duration-300" />
                   <span className="group-hover:tracking-wide transition-all duration-300">
                     Sobre o Evento
                   </span>
