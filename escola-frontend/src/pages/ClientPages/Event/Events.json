@@ -16,10 +16,10 @@
     {
       "id": "evento-2",
       "name": "Ensino Fundamental",
-      "eventAt": "22/11/2024",
-      "imageUrl": "evento-2.jpg",
+      "eventAt": "22/11/2025",
+      "imageUrl": "evento-1.jpeg",
       "photosLink": "https://www.instagram.com/stories/highlights/17983801568424996/",
-      "description": "Hackathon de 48 horas focado em soluções tecnológicas para sustentabilidade ambiental. Participantes desenvolveram protótipos para problemas reais de gestão de resíduos, energia renovável e conservação de recursos hídricos. O evento premiou as três melhores soluções com mentoria e apoio para implementação.",
+      "description": "Abertura de matrículas para turmas do Ensino Fundamental. Oferecemos um currículo diversificado, atividades extracurriculares e um ambiente que estimula o desenvolvimento integral dos alunos. Entre em contato para saber mais sobre o processo de inscrição, horários e documentação necessária.",
       "categories": [
         {
           "name": "Matrículas"
@@ -30,7 +30,7 @@
       "id": "evento-3",
       "name": "Ensino Médio",
       "eventAt": "22/11/2024",
-      "imageUrl": "evento-3.jpeg",
+      "imageUrl": "evento-1.jpeg",
       "photosLink": "https://www.instagram.com/stories/highlights/17849176328678834/",
       "categories": [
         {
@@ -41,8 +41,8 @@
     {
       "id": "evento-4",
       "name": "Ensino P+",
-      "eventAt": "22/11/2024",
-      "imageUrl": "evento-4.jpeg",
+      "eventAt": "22/11/2023",
+      "imageUrl": "evento-1.jpeg",
       "description": "Preparação 100% direcionada para o conteúdo programático do seu concurso, professores especialistas, material exclusivo e suporte contínuo para resolver suas questões em tempo real!",
       "categories": [
         {
