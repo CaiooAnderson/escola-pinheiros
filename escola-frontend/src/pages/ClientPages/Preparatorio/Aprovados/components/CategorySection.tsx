@@ -38,18 +38,6 @@ export default function CategorySection({
       filteredItems = filteredItems.sort(
         (a, b) => Number(b.year) - Number(a.year)
       );
-    } else if (sortOption === "position-asc") {
-      filteredItems = filteredItems.sort((a, b) => {
-        const posA = parseInt(a.position);
-        const posB = parseInt(b.position);
-        return posA - posB;
-      });
-    } else if (sortOption === "position-desc") {
-      filteredItems = filteredItems.sort((a, b) => {
-        const posA = parseInt(a.position);
-        const posB = parseInt(b.position);
-        return posB - posA;
-      });
     } else if (sortOption === "name-asc") {
       filteredItems = filteredItems.sort((a, b) =>
         a.name.localeCompare(b.name)

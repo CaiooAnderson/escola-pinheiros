@@ -45,10 +45,8 @@ export default function Filters({
           <SelectItem className="hidden" value="default">
             Ordenar por
           </SelectItem>
-          <SelectItem value="year-desc">Ano mais recente</SelectItem>
-          <SelectItem value="year-asc">Ano mais antigo</SelectItem>
-          <SelectItem value="position-asc">Melhor colocação</SelectItem>
-          <SelectItem value="position-desc">Pior colocação</SelectItem>
+          <SelectItem value="year-desc">Mais recente</SelectItem>
+          <SelectItem value="year-asc">Mais antigo</SelectItem>
           <SelectItem value="name-asc">Nome A-Z</SelectItem>
           <SelectItem value="name-desc">Nome Z-A</SelectItem>
         </SelectContent>

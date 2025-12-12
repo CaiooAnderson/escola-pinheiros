@@ -6,6 +6,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import MarqueeEffect from "@/components/animations/MarqueeEffect";
 
 interface InfoModalProps {
   approved: {
@@ -54,7 +55,7 @@ export default function InfoModal({
       <DialogContent className="md:max-w-2xl sm:max-w-xl max-w-sm max-h-[80vh] rounded-xl p-6 shadow-primary-dark flex flex-col">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold font-primary text-primary-dark text-center border-b pb-4">
-            Depoimento - {approved.name}
+            <MarqueeEffect>Depoimento - {approved.name}</MarqueeEffect>
           </DialogTitle>
         </DialogHeader>
 

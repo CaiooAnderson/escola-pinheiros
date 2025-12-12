@@ -1,5 +1,14 @@
 {
   "approved": [
-    
+    {
+      "id": "aprovado-1",
+      "name": "Aluno Exemplo",
+      "imageUrl": "aprovado-1.jpg",
+      "category": "Engenharia Química",
+      "year": "2025",
+      "institution": "UFRJ",
+      "testimony": "O Preparatório P+ foi fundamental para minha aprovação em Engenharia Química na UFRJ. As aulas eram extremamente didáticas e os professores sempre estavam disponíveis para tirar dúvidas. Além disso, o material era atualizado e completo. O que mais me ajudou foram os simulados periódicos, que me prepararam para o estilo da prova. Recomendo o Preparatório para todos que buscam uma vaga em universidades públicas!",
+      "socialLink": "https://www.instagram.com/pinheirosonline"
+    }
   ]
 }

@@ -11,7 +11,6 @@ type ApprovedItem = {
   name: string;
   category: string;
   year: string;
-  position: string;
   institution: string;
   imageUrl: string;
   testimony?: string;
@@ -69,7 +68,6 @@ export default function Aprovados() {
             name: approved.name,
             category: approved.category,
             year: approved.year,
-            position: approved.position,
             institution: approved.institution,
             imageUrl: imageUrl,
             testimony: approved.testimony,

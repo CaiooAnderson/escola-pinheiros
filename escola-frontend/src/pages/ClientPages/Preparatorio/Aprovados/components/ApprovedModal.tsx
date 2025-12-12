@@ -10,7 +10,13 @@ import { Button } from "@/components/ui/button";
 import { ImageSkeleton } from "@/components/skeletons/ImageSkeleton";
 import MarqueeEffect from "@/components/animations/MarqueeEffect";
 import InfoModal from "./InfoModal";
-import { ExternalLink, Info, Award } from "lucide-react";
+import {
+  ExternalLink,
+  MessageCircle,
+  GraduationCap,
+  Calendar,
+  Tag,
+} from "lucide-react";
 
 interface ApprovedModalProps {
   approved: {
@@ -19,7 +25,6 @@ interface ApprovedModalProps {
     imageUrl: string;
     category: string;
     year: string;
-    position: string;
     institution: string;
     testimony?: string;
     socialLink?: string;
@@ -49,6 +54,11 @@ export default function ApprovedModal({
     }
   };
 
+  // Verificar quais botões devem ser exibidos
+  const hasSocialLink = Boolean(approved.socialLink);
+  const hasTestimony = Boolean(approved.testimony);
+  const showButtons = hasSocialLink || hasTestimony;
+
   return (
     <>
       <Dialog open={isOpen} onOpenChange={onClose}>
@@ -56,20 +66,49 @@ export default function ApprovedModal({
           <DialogHeader>
             <DialogTitle>
               <div className="line-clamp-1 leading-normal flex justify-center sm:justify-start">
-                <MarqueeEffect className="sm:max-w-112 max-w-60">
+                <MarqueeEffect className="sm:max-w-112 max-w-60 text-primary">
                   {approved.name}
                 </MarqueeEffect>
               </div>
             </DialogTitle>
-            <DialogDescription className="text-sm text-muted-foreground flex flex-col items-center sm:items-start">
-              <div className="flex items-center gap-2">
-                <Award className="w-4 h-4 text-primary" />
-                <span>
-                  {approved.position} lugar - {approved.institution}
-                </span>
+            <DialogDescription className="space-y-2 pt-2">
+              <div className="space-y-2.5 pt-2">
+                <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
+                  <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-1.5 text-muted-foreground">
+                      <GraduationCap className="w-4 h-4 text-primary" />
+                      <span className="font-medium text-foreground">
+                        Instituição:
+                      </span>
+                    </div>
+                    <span className="text-foreground font-semibold">
+                      {approved.institution}
+                    </span>
+                  </div>
+
+                  <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-1.5 text-muted-foreground">
+                      <Calendar className="w-4 h-4 text-primary" />
+                      <span className="font-medium text-foreground">Ano:</span>
+                    </div>
+                    <span className="text-foreground font-semibold">
+                      {approved.year}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-1.5 text-muted-foreground">
+                    <Tag className="w-4 h-4 text-primary" />
+                    <span className="font-medium text-foreground">
+                      Categoria:
+                    </span>
+                  </div>
+                  <span className="px-2.5 py-1 bg-primary/10 text-primary font-semibold rounded-full text-sm">
+                    {approved.category}
+                  </span>
+                </div>
               </div>
-              <span>Ano: {approved.year}</span>
-              <span>Categoria: {approved.category}</span>
             </DialogDescription>
           </DialogHeader>
 
@@ -79,39 +118,67 @@ export default function ApprovedModal({
             className="mt-4 mx-auto rounded-lg object-cover sm:w-100 sm:h-100 w-60 h-60"
           />
 
-          <div className="flex justify-center gap-4 mt-4">
-            <Button
-              variant="default"
-              className="font-bold gap-2 group"
-              onClick={handleSocialClick}
-              disabled={!approved.socialLink}
+          {showButtons && (
+            <div
+              className={`flex ${
+                hasSocialLink && hasTestimony
+                  ? "flex-col sm:flex-row justify-between"
+                  : "justify-center"
+              } gap-3 mt-4`}
             >
-              <ExternalLink className="w-4 h-4 group-hover:scale-110 transition-transform" />
-              Redes Sociais
-            </Button>
+              {hasSocialLink && (
+                <Button
+                  variant="default"
+                  className={`font-bold gap-2 group ${
+                    hasSocialLink && hasTestimony
+                      ? "w-full sm:w-auto"
+                      : "w-full max-w-xs"
+                  }`}
+                  onClick={handleSocialClick}
+                >
+                  <ExternalLink className="w-5 h-5 group-hover:scale-110 group-hover:rotate-90 transition-transform" />
+                  Redes Sociais
+                </Button>
+              )}
 
-            <Button
-              variant="secondary"
-              className="font-bold gap-2 group"
-              onClick={handleTestimonyClick}
-              disabled={!approved.testimony}
-            >
-              <Info className="w-4 h-4 group-hover:animate-bounce transition-all" />
-              Depoimento
-            </Button>
-          </div>
+              {hasTestimony && (
+                <Button
+                  variant="secondary"
+                  className={`font-bold gap-2 group ${
+                    hasSocialLink && hasTestimony
+                      ? "w-full sm:w-auto"
+                      : "w-full max-w-xs"
+                  }`}
+                  onClick={handleTestimonyClick}
+                >
+                  <MessageCircle className="w-5 h-5 group-hover:animate-bounce transition-all" />
+                  Depoimento
+                </Button>
+              )}
+            </div>
+          )}
+
+          {!showButtons && (
+            <div className="mt-4 text-center">
+              <p className="text-sm text-muted-foreground italic">
+                Este aprovado não possui informações adicionais disponíveis.
+              </p>
+            </div>
+          )}
         </DialogContent>
       </Dialog>
 
-      <InfoModal
-        approved={
-          approved.testimony
-            ? { ...approved, description: approved.testimony }
-            : null
-        }
-        isOpen={isInfoModalOpen}
-        onClose={() => setIsInfoModalOpen(false)}
-      />
+      {hasTestimony && (
+        <InfoModal
+          approved={
+            approved.testimony
+              ? { ...approved, description: approved.testimony }
+              : null
+          }
+          isOpen={isInfoModalOpen}
+          onClose={() => setIsInfoModalOpen(false)}
+        />
+      )}
     </>
   );
 }
